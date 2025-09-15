@@ -1,10 +1,23 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from '@/components/Header';
 import Image from 'next/image';
+import localFont from 'next/font/local';
 
-const inter = Inter({ subsets: ['latin'] });
+const greatVibes = localFont({
+  src: '../../public/fonts/GreatVibes-Regular.ttf',
+  variable: '--font-great-vibes',
+});
+
+const imperialScript = localFont({
+  src: '../../public/fonts/ImperialScript-Regular.ttf',
+  variable: '--font-imperial-script',
+});
+
+const satoshi = localFont({
+  src: '../../public/fonts/Satoshi-Variable.ttf',
+  variable: '--font-satoshi',
+});
 
 export const metadata: Metadata = {
   title: 'My Responsive App',
@@ -17,19 +30,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} bg-[#181818]`}>
+    <html lang="en" className={`${greatVibes.variable} ${imperialScript.variable} ${satoshi.variable}`}>
+      <body className="bg-[#181818]">
         <div className="relative">
           <Image
             src="/bg-whole.png"
             alt="Website background"
-            fill // Fills the parent container
-            className="object-cover" // Ensures the image covers the area without distortion
-            quality={100} // Set a higher quality for the background image
-            priority // Preloads the image
+            fill
+            className="object-cover"
+            quality={100}
+            priority
           />
-          <Header />
-          <main className="relative pt-[160px]">{children}</main>
+          <div className="relative z-10">
+            <Header />
+            <main className="pt-[0px]">{children}</main>
+          </div>
         </div>
       </body>
     </html>
