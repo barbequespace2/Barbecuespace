@@ -18,9 +18,9 @@ interface MobileMenuProps {
 
 const MobileMenu = ({ onClose }: MobileMenuProps) => {
   return (
-    <div className="fixed inset-0 z-60 bg-black flex flex-col items-center justify-center p-8">
+    <div className="fixed inset-0 z-60 bg-[#181818] flex flex-col items-center justify-center p-8">
       {/* Menu Container with Red Border */}
-      <div className="w-[358px] h-4/4 flex-shrink-0 bg-black rounded-[18px] border-2 border-[#E3010F] p-4 flex flex-col items-center justify-center relative">
+      <div className="w-[358px] h-4/4 flex-shrink-0 bg-[#181818] rounded-[18px] border-2 border-[#E3010F] p-4 flex flex-col items-center justify-center relative">
         {/* Close Button (Moved inside the inner div) */}
         <button onClick={onClose} className="absolute top-4 left-4 text-[#E3010F] text-[3rem] font-bold">
           &times;

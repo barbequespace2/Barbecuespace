@@ -31,15 +31,15 @@ export default function Header() {
         </Link>
 
         {/* Hamburger Icon for Mobile */}
-        <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="md:hidden flex flex-col justify-center items-center gap-1.5"
-          aria-label="Toggle menu"
-        >
-          <span className="block h-0.5 w-6 bg-white transition-transform duration-300"></span>
-          <span className="block h-0.5 w-6 bg-white transition-opacity duration-300"></span>
-          <span className="block h-0.5 w-6 bg-white transition-transform duration-300"></span>
-        </button>
+<button
+  onClick={() => setIsMenuOpen(!isMenuOpen)}
+  className="md:hidden flex flex-col justify-center items-center gap-1.5"
+  aria-label="Toggle menu"
+>
+  <span className="block h-0.5 w-6 bg-transparent border border-[#E3010F] transition-transform duration-300"></span>
+  <span className="block h-0.5 w-6 bg-transparent border border-[#E3010F] transition-opacity duration-300"></span>
+  <span className="block h-0.5 w-6 bg-transparent border border-[#E3010F] transition-transform duration-300"></span>
+</button>
 
         {/* Navigation Links (Hidden on Mobile) */}
         <nav className="hidden md:flex items-center gap-6">
