@@ -1,6 +1,8 @@
+// src/app/layout.tsx
 import type { Metadata } from 'next';
 import './globals.css';
 import Header from '@/components/Header';
+import Footer from '@/components/Footer'; // Import the new Footer component
 import Image from 'next/image';
 import localFont from 'next/font/local';
 
@@ -44,6 +46,7 @@ export default function RootLayout({
           <div className="relative z-10">
             <Header />
             <main className="pt-[0px]">{children}</main>
+            <Footer />
           </div>
         </div>
       </body>
