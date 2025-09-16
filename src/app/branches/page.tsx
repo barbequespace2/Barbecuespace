@@ -1,3 +1,8 @@
+'use client';
+
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Image from 'next/image';
 
 // --- MOCK DATA ---
@@ -16,7 +21,7 @@ const branchesData = [
   },
   {
     name: 'Pattom',
-    address: ['Pattom Palace Rd', 'Opp. St. Mary\'s School', 'Trivandrum'],
+    address: ["Pattom Palace Rd", "Opp. St. Mary's School", 'Trivandrum'],
     phone: '+91 91234 56789',
     imageSrc: '/branch-1.png',
   },
@@ -35,10 +40,27 @@ const branchesData = [
 ];
 
 // --- PLACEHOLDER COMPONENT ---
-function SingleImageSection({ imageSrc, altText, width, height }: { imageSrc: string; altText: string; width: number; height: number; }) {
+function SingleImageSection({
+  imageSrc,
+  altText,
+  width,
+  height,
+}: {
+  imageSrc: string;
+  altText: string;
+  width: number;
+  height: number;
+}) {
   return (
-    <div className="w-full flex justify-center py-16">
-      <div className="relative" style={{ width: `${width}px`, height: `${height}px` }}>
+    <div
+      className="w-full flex justify-center py-16"
+      data-aos="fade-up"
+      data-aos-delay="200"
+    >
+      <div
+        className="relative"
+        style={{ width: `${width}px`, height: `${height}px` }}
+      >
         <Image
           src={imageSrc}
           alt={altText}
@@ -68,6 +90,8 @@ function BranchCard({ name, address, phone, imageSrc }: BranchCardProps) {
         borderRadius: '7.799px',
         border: '0.78px solid #E3010F',
       }}
+      data-aos="zoom-in"
+      data-aos-delay="150"
     >
       {/* Image Div (Top) */}
       <div className="w-full mb-4">
@@ -92,7 +116,10 @@ function BranchCard({ name, address, phone, imageSrc }: BranchCardProps) {
           style={{ fontSize: '13px' }}
         >
           {address.map((line, index) => (
-            <span key={index}>{line}<br /></span>
+            <span key={index}>
+              {line}
+              <br />
+            </span>
           ))}
         </p>
         <p
@@ -106,8 +133,17 @@ function BranchCard({ name, address, phone, imageSrc }: BranchCardProps) {
   );
 }
 
-
+// --- MAIN PAGE ---
 export default function BranchesPage() {
+  useEffect(() => {
+    AOS.init({
+      duration: 900,
+      once: false,
+      easing: 'ease-in-out',
+      offset: 100,
+    });
+  }, []);
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen text-white bg-[#181818]">
       {/* Hero Section with Background Image */}
@@ -116,20 +152,23 @@ export default function BranchesPage() {
         style={{
           backgroundImage: `url('/branch-image-bg.png')`,
         }}
+        data-aos="fade-zoom-in"
+        data-aos-delay="100"
       >
-        {/* ADDED: New div for 50% light gray overlay */}
-        <div className="absolute inset-0 bg-gray-500 opacity-50 z-[1]"></div> 
+        {/* Gray overlay */}
+        <div className="absolute inset-0 bg-gray-500 opacity-50 z-[1]"></div>
 
-        {/* The gradient overlay (now with z-index to be on top of the gray) */}
+        {/* Gradient overlay */}
         <div
-          className="absolute inset-0 z-[2]" // Added z-index to ensure it's above the gray overlay
+          className="absolute inset-0 z-[2]"
           style={{
-            background: 'linear-gradient(0deg, #171717 5%, rgba(23, 23, 23, 0.1) 100%)',
+            background:
+              'linear-gradient(0deg, #171717 5%, rgba(23, 23, 23, 0.1) 100%)',
           }}
         ></div>
 
-        {/* The text content is placed on top of all overlays with the highest z-index */}
-        <div className="relative z-[3] text-center"> 
+        {/* Hero Content */}
+        <div className="relative z-[3] text-center">
           <h1
             className="font-great-vibes text-[#E3010F]"
             style={{
@@ -147,6 +186,8 @@ export default function BranchesPage() {
               fontSize: '22px',
               fontWeight: 400,
             }}
+            data-aos="fade-up"
+            data-aos-delay="250"
           >
             Find your nearest barbequespace
           </p>
@@ -155,14 +196,26 @@ export default function BranchesPage() {
 
       {/* Branches Grid Section */}
       <div className="container mx-auto px-4 py-16">
-        <div className="flex flex-wrap justify-center gap-8 mb-8">
-          {branchesData.slice(0, 3).map((branch) => (
-            <BranchCard key={branch.name} {...branch} />
+        <div
+          className="flex flex-wrap justify-center gap-8 mb-8"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          {branchesData.slice(0, 3).map((branch, idx) => (
+            <div key={branch.name} data-aos="zoom-in" data-aos-delay={200 + idx * 100}>
+              <BranchCard {...branch} />
+            </div>
           ))}
         </div>
-        <div className="flex flex-wrap justify-center gap-8">
-          {branchesData.slice(3, 5).map((branch) => (
-            <BranchCard key={branch.name} {...branch} />
+        <div
+          className="flex flex-wrap justify-center gap-8"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          {branchesData.slice(3, 5).map((branch, idx) => (
+            <div key={branch.name} data-aos="zoom-in" data-aos-delay={300 + idx * 100}>
+              <BranchCard {...branch} />
+            </div>
           ))}
         </div>
       </div>
