@@ -61,7 +61,6 @@ type BranchCardProps = {
 function BranchCard({ name, address, phone, imageSrc }: BranchCardProps) {
   return (
     <div
-      // CHANGED: Applied new background, border, and border-radius styles
       className="flex flex-col items-center flex-shrink-0 bg-black overflow-hidden"
       style={{
         width: '302.603px',
@@ -114,17 +113,30 @@ export default function BranchesPage() {
       {/* Hero Section with Background Image */}
       <div
         className="relative w-full h-[50vh] flex flex-col items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: "url('/branch-image-bg.png')" }}
+        style={{
+          backgroundImage: `url('/branch-image-bg.png')`,
+        }}
       >
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="relative z-10 text-center">
+        {/* ADDED: New div for 50% light gray overlay */}
+        <div className="absolute inset-0 bg-gray-500 opacity-50 z-[1]"></div> 
+
+        {/* The gradient overlay (now with z-index to be on top of the gray) */}
+        <div
+          className="absolute inset-0 z-[2]" // Added z-index to ensure it's above the gray overlay
+          style={{
+            background: 'linear-gradient(0deg, #171717 5%, rgba(23, 23, 23, 0.1) 100%)',
+          }}
+        ></div>
+
+        {/* The text content is placed on top of all overlays with the highest z-index */}
+        <div className="relative z-[3] text-center"> 
           <h1
             className="font-great-vibes text-[#E3010F]"
             style={{
               fontSize: '100px',
               fontWeight: 400,
               lineHeight: '55.764%',
-              paddingTop:'120px',
+              paddingTop: '120px',
             }}
           >
             Branches
