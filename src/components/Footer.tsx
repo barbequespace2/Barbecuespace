@@ -11,10 +11,10 @@ const socialMediaIcons = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#E3010F] flex flex-col items-center justify-center py-8 px-[71px] self-stretch">
-      {/* Top Section: Three columns */}
-      <div className="flex w-full items-start justify-between">
-        {/* Leftmost Div (remains the same) */}
+    <footer className="bg-[#E3010F] flex flex-col items-center justify-center py-8 px-6 md:px-[71px] self-stretch">
+      {/* Desktop (3 columns) */}
+      <div className="hidden md:flex w-full items-start justify-between">
+        {/* Left */}
         <div className="flex flex-col items-start gap-3">
           <p className="font-satoshi text-black text-[28px] font-medium leading-none tracking-[-1.12px]">
             Contact Us
@@ -48,7 +48,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Center Div (content now aligns to the left) */}
+        {/* Center */}
         <div className="flex flex-col items-start justify-center">
           <p className="font-satoshi text-black text-[10px] font-bold uppercase tracking-[0.4px] leading-[130%]">
             Contact us
@@ -64,7 +64,7 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* Right Div with Arrow and Credits (content now aligns to the right) */}
+        {/* Right */}
         <div className="flex flex-col items-end justify-center">
           <Image
             src="/arrowtop.png"
@@ -74,7 +74,7 @@ export default function Footer() {
             className="cursor-pointer"
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           />
-          <div className="mt-8 text-right"> {/* Increased top margin for more space and added text-right for alignment */}
+          <div className="mt-8 text-right">
             <p className="font-satoshi text-black text-[12px] font-medium leading-[130%]">
               Copyright © 2025 . Powered by Barbeque Space
             </p>
@@ -82,6 +82,46 @@ export default function Footer() {
               Designed and developed by Orque
             </p>
           </div>
+        </div>
+      </div>
+
+      {/* Mobile (stacked, centered) */}
+      <div className="flex flex-col items-center text-center md:hidden gap-6">
+        <p className="font-satoshi text-black text-lg font-bold">Contact Us</p>
+
+        {/* Navigation */}
+        <div className="flex flex-col gap-2">
+          <p className="text-black text-base">
+            <Link href="/" className="mr-1">Home</Link> / <Link href="/aboutus">About us</Link>
+          </p>
+          <p className="text-black text-base">
+            <Link href="/menu" className="mr-1">Menu</Link> / <Link href="/branches">Branches</Link> / <Link href="/gallery">Gallery</Link>
+          </p>
+        </div>
+
+        {/* Social Icons */}
+        <div className="flex gap-4">
+          {socialMediaIcons.map((icon) => (
+            <Link key={icon.alt} href={icon.href}>
+              <Image
+                src={icon.src}
+                alt={icon.alt}
+                width={32}
+                height={32}
+                className="rounded-full"
+              />
+            </Link>
+          ))}
+        </div>
+
+        {/* Copyright */}
+        <div className="text-center">
+          <p className="text-black text-[12px] font-medium">
+            Copyright © 2025 . Powered by Barbeque Space
+          </p>
+          <p className="text-black text-[12px] font-medium">
+            Designed and developed by Orque
+          </p>
         </div>
       </div>
     </footer>
