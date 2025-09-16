@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import ImageCarousel from '@/components/ImageCarousel';
-
+import SingleImageSection from '@/components/SingleImageSection';
 export default function HomePage() {
   return (
     <div>
@@ -98,14 +98,12 @@ export default function HomePage() {
       </section>
 
       {/* Single Image Section */}
-      <section className=" py-16 flex justify-center items-center">
-          <Image
-            src="/about-image.svg"
-            alt="Barbecue Space restaurant interior"
-            width={200}
-            height={100}
-          />
-      </section>
+<SingleImageSection
+        imageSrc="/about-image.svg"
+        altText="Barbecue Space restaurant interior"
+        width={200}
+        height={100}
+      />
     </div>
   );
 }
