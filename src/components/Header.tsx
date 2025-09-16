@@ -20,7 +20,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-[33px] z-50 mx-auto flex max-w-[1243px] items-center justify-between rounded-[20px] border-b-2 border-b-[rgba(125,1,8,0.15)] bg-black px-[70px] py-2.5 backdrop-blur-sm md:justify-normal">
+      <header className="fixed inset-x-0 top-[33px] z-50 mx-auto flex max-w-[1243px] items-center justify-between rounded-[20px] border-b-3 border-b-[rgba(125,1,8,0.50)] bg-black px-[70px] py-2.5 backdrop-blur-sm md:justify-normal">
         {/* Left Column (Logo) */}
         <div className="md:flex-1 md:flex md:justify-start">
           <Link href="/" className="flex items-center">
