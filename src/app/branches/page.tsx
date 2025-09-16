@@ -1,8 +1,167 @@
+import Image from 'next/image';
+
+// --- MOCK DATA ---
+const branchesData = [
+  {
+    name: 'Kumarapuram',
+    address: ['Poonthi Road', 'Near Kims Hospital', 'Trivandrum'],
+    phone: '+91 95390 94555',
+    imageSrc: '/branch-1.png',
+  },
+  {
+    name: 'Kazhakuttam',
+    address: ['NH 66 Bypass', 'Near Technopark', 'Trivandrum'],
+    phone: '+91 98765 43210',
+    imageSrc: '/branch-1.png',
+  },
+  {
+    name: 'Pattom',
+    address: ['Pattom Palace Rd', 'Opp. St. Mary\'s School', 'Trivandrum'],
+    phone: '+91 91234 56789',
+    imageSrc: '/branch-1.png',
+  },
+  {
+    name: 'Kowdiar',
+    address: ['Kowdiar Main Road', 'Near Tennis Club', 'Trivandrum'],
+    phone: '+91 94444 55555',
+    imageSrc: '/branch-1.png',
+  },
+  {
+    name: 'Vazhuthacaud',
+    address: ['Forest Office Lane', 'Near Kalabhavan Theatre', 'Trivandrum'],
+    phone: '+91 96666 77777',
+    imageSrc: '/branch-1.png',
+  },
+];
+
+// --- PLACEHOLDER COMPONENT ---
+function SingleImageSection({ imageSrc, altText, width, height }: { imageSrc: string; altText: string; width: number; height: number; }) {
+  return (
+    <div className="w-full flex justify-center py-16">
+      <div className="relative" style={{ width: `${width}px`, height: `${height}px` }}>
+        <Image
+          src={imageSrc}
+          alt={altText}
+          fill
+          style={{ objectFit: 'contain' }}
+        />
+      </div>
+    </div>
+  );
+}
+
+// --- BRANCH CARD COMPONENT ---
+type BranchCardProps = {
+  name: string;
+  address: string[];
+  phone: string;
+  imageSrc: string;
+};
+
+function BranchCard({ name, address, phone, imageSrc }: BranchCardProps) {
+  return (
+    <div
+      // CHANGED: Applied new background, border, and border-radius styles
+      className="flex flex-col items-center flex-shrink-0 bg-black overflow-hidden"
+      style={{
+        width: '302.603px',
+        padding: '14.038px 14.819px 32.608px 14.817px',
+        borderRadius: '7.799px',
+        border: '0.78px solid #E3010F',
+      }}
+    >
+      {/* Image Div (Top) */}
+      <div className="w-full mb-4">
+        <Image
+          src={imageSrc}
+          alt={`${name} branch`}
+          width={273}
+          height={200}
+          className="object-cover rounded-md"
+        />
+      </div>
+      {/* Content Div (Bottom) */}
+      <div className="flex flex-col items-start w-full text-left">
+        <h3
+          className="font-satoshi font-medium text-[#E3010F]"
+          style={{ fontSize: '18px' }}
+        >
+          {name}
+        </h3>
+        <p
+          className="mt-2 font-satoshi font-normal text-white"
+          style={{ fontSize: '13px' }}
+        >
+          {address.map((line, index) => (
+            <span key={index}>{line}<br /></span>
+          ))}
+        </p>
+        <p
+          className="mt-4 font-satoshi font-medium text-[#E3010F]"
+          style={{ fontSize: '14px' }}
+        >
+          Contact No : {phone}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+
 export default function BranchesPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen text-white bg-[#181818]">
-      <h1 className="text-4xl font-bold">Branches Page</h1>
-      <p className="mt-4 text-lg">Find a branch near you.</p>
+      {/* Hero Section with Background Image */}
+      <div
+        className="relative w-full h-[50vh] flex flex-col items-center justify-center bg-cover bg-center"
+        style={{ backgroundImage: "url('/branch-image-bg.png')" }}
+      >
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="relative z-10 text-center">
+          <h1
+            className="font-great-vibes text-[#E3010F]"
+            style={{
+              fontSize: '100px',
+              fontWeight: 400,
+              lineHeight: '55.764%',
+              paddingTop:'120px',
+            }}
+          >
+            Branches
+          </h1>
+          <p
+            className="mt-8 font-satoshi text-white"
+            style={{
+              fontSize: '22px',
+              fontWeight: 400,
+            }}
+          >
+            Find your nearest barbequespace
+          </p>
+        </div>
+      </div>
+
+      {/* Branches Grid Section */}
+      <div className="container mx-auto px-4 py-16">
+        <div className="flex flex-wrap justify-center gap-8 mb-8">
+          {branchesData.slice(0, 3).map((branch) => (
+            <BranchCard key={branch.name} {...branch} />
+          ))}
+        </div>
+        <div className="flex flex-wrap justify-center gap-8">
+          {branchesData.slice(3, 5).map((branch) => (
+            <BranchCard key={branch.name} {...branch} />
+          ))}
+        </div>
+      </div>
+
+      {/* Single Image Section before Footer */}
+      <SingleImageSection
+        imageSrc="/about-image.svg"
+        altText="Barbecue Space restaurant interior"
+        width={200}
+        height={100}
+      />
     </div>
   );
 }
