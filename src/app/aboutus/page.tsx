@@ -1,44 +1,64 @@
+'use client';
+
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import SingleImageSection from '@/components/SingleImageSection';
 import Image from 'next/image';
 
 export default function AboutUsPage() {
+  useEffect(() => {
+    AOS.init({
+      duration: 900, // slightly faster than homepage
+      once: false,
+      easing: 'ease-in-out',
+      offset: 100, // trigger slightly earlier
+    });
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen text-white bg-[#181818]">
 
-      {/* Hero Section with Background Image and Custom Heading */}
-      <div className="relative w-full h-80 md-h-96 flex items-center justify-center">
-        {/* Background Image using next/image */}
+      {/* Hero Section */}
+      <div
+        className="relative w-full h-80 md:h-96 flex items-center justify-center"
+        data-aos="fade-zoom-in"
+        data-aos-delay="100"
+      >
         <Image
           src="/about-bg.png"
           alt="Interior of the Barbecue Space restaurant"
-          layout="fill"
-          objectFit="cover"
+          fill
           quality={100}
-          className="z-0" // Ensure image is in the background
+          className="z-0 object-cover"
         />
-        
-        {/* Heading with custom styles applied */}
-        <h1 
+        <h1
           className="relative z-20 text-[#E3010F] font-great-vibes text-[110px] font-normal leading-[61px] text-center"
         >
           About Us
         </h1>
       </div>
 
-      {/* Main content container with original padding */}
+      {/* Main content container */}
       <div className="px-4 md:px-16">
         {/* First Single Image Section */}
-        <SingleImageSection
-          imageSrc="/about-image.svg"
-          altText="Barbecue Space restaurant interior"
-          width={200}
-          height={100}
-        />
+        <div data-aos="fade-up" data-aos-delay="200">
+          <SingleImageSection
+            imageSrc="/about-image.svg"
+            altText="Barbecue Space restaurant interior"
+            width={200}
+            height={100}
+          />
+        </div>
 
         {/* Three Content Divs */}
-        <div className="flex flex-col md:flex-column gap-8 lg:gap-16 mt-16 max-w-7xl mx-auto">
+        <div className="flex flex-col gap-8 lg:gap-16 mt-16 max-w-7xl mx-auto">
           {/* First Div */}
-          <div className="flex flex-col items-start p-4">
+          <div
+            className="flex flex-col items-start p-4"
+            data-aos="fade-right"
+            data-aos-delay="150"
+          >
             <h2 className="text-[#E3010F] font-satoshi text-2xl font-medium leading-[160%]">
               Our Mission
             </h2>
@@ -54,11 +74,17 @@ export default function AboutUsPage() {
               width={1440}
               height={200}
               className="mt-6 rounded-lg"
+              data-aos="zoom-in"
+              data-aos-delay="300"
             />
           </div>
 
-          {/* Second Div - UPDATED */}
-          <div className="flex flex-col items-start p-4">
+          {/* Second Div */}
+          <div
+            className="flex flex-col items-start p-4"
+            data-aos="fade-left"
+            data-aos-delay="200"
+          >
             <h2 className="text-[#E3010F] font-satoshi text-2xl font-medium leading-[160%]">
               Our Story
             </h2>
@@ -70,8 +96,12 @@ export default function AboutUsPage() {
             </p>
           </div>
 
-          {/* Third Div - UPDATED */}
-          <div className="flex flex-col items-start p-4">
+          {/* Third Div */}
+          <div
+            className="flex flex-col items-start p-4"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
             <h2 className="text-[#E3010F] font-satoshi text-2xl font-medium leading-[160%]">
               Our Philosophy
             </h2>
@@ -84,8 +114,12 @@ export default function AboutUsPage() {
           </div>
         </div>
 
-        {/* Second Single Image Section - MODIFIED TO REMOVE BOTTOM PADDING */}
-        <div className="mb-0"> {/* Wrapper to control bottom margin */}
+        {/* Second Single Image Section */}
+        <div
+          className="mb-0"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
           <SingleImageSection
             imageSrc="/about-image.svg"
             altText="Barbecue Space restaurant interior"
