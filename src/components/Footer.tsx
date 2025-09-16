@@ -115,14 +115,22 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="text-center">
-          <p className="text-black text-[12px] font-medium">
-            Copyright © 2025 . Powered by Barbeque Space
-          </p>
-          <p className="text-black text-[12px] font-medium">
-            Designed and developed by Orque
-          </p>
-        </div>
+<div className="text-center">
+  <p className="text-black text-[12px] font-medium">
+    Copyright © 2025 . Powered by Barbeque Space
+  </p>
+  <p className="text-black text-[12px] font-medium">
+    Designed and developed by{' '}
+    <a
+      href="https://www.orqueinnovations.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:underline"
+    >
+      Orque
+    </a>
+  </p>
+</div>
       </div>
     </footer>
   );

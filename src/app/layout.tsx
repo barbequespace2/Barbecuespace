@@ -2,9 +2,10 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Header from '@/components/Header';
-import Footer from '@/components/Footer'; // Import the new Footer component
+import Footer from '@/components/Footer';
 import Image from 'next/image';
 import localFont from 'next/font/local';
+import AOSProvider from '@/components/AOSProvider'; // ✅ Import AOSProvider
 
 const greatVibes = localFont({
   src: '../../public/fonts/GreatVibes-Regular.ttf',
@@ -26,29 +27,27 @@ export const metadata: Metadata = {
   description: 'Built with Next.js and Tailwind CSS',
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${greatVibes.variable} ${imperialScript.variable} ${satoshi.variable}`}>
       <body className="bg-[#181818]">
-        <div className="relative">
-          <Image
-            src="/bg-whole.png"
-            alt="Website background"
-            fill
-            className="object-cover"
-            quality={100}
-            priority
-          />
-          <div className="relative z-10">
-            <Header />
-            <main className="pt-[0px]">{children}</main>
-            <Footer />
+        <AOSProvider>
+          <div className="relative">
+            <Image
+              src="/bg-whole.png"
+              alt="Website background"
+              fill
+              className="object-cover"
+              quality={100}
+              priority
+            />
+            <div className="relative z-10">
+              <Header />
+              <main className="pt-[0px]">{children}</main>
+              <Footer />
+            </div>
           </div>
-        </div>
+        </AOSProvider>
       </body>
     </html>
   );
