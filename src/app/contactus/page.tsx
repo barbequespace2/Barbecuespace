@@ -5,23 +5,36 @@ export default function ContactUsPage() {
     <div className="bg-[#181818] text-white">
       {/* Hero Section */}
             {/* Hero Section */}
-      <div
-        className="relative flex items-center justify-center h-[400px] bg-cover bg-center"
-        style={{ backgroundImage: "url('/contact-bg.png')" }}
-      >
-        <h1
-          style={{
-            color: "#E3010F",
-            textAlign: "center",
-            fontFamily: "Great Vibes, cursive",
-            fontSize: "110.538px",
-            fontWeight: 400,
-            lineHeight: "55.764%",
-          }}
-        >
-          Contact Us
-        </h1>
-      </div>
+      {/* Hero Section */}
+<div
+  className="relative flex items-center justify-center h-[400px] bg-cover bg-center"
+  style={{ backgroundImage: "url('/contact-bg.png')" }}
+>
+  {/* Gradient overlay */}
+  <div
+    className="absolute inset-0 z-10"
+    style={{
+      background:
+        'linear-gradient(0deg, #171717 5%, rgba(23, 23, 23, 0.1) 100%)',
+    }}
+  ></div>
+
+  {/* Heading */}
+  <h1
+    className="relative z-20"
+    style={{
+      color: "#E3010F",
+      textAlign: "center",
+      fontFamily: "Great Vibes, cursive",
+      fontSize: "110.538px",
+      fontWeight: 400,
+      lineHeight: "55.764%",
+    }}
+  >
+    Contact Us
+  </h1>
+</div>
+
 
 
       {/* Main Section 1 */}
