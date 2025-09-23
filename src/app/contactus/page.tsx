@@ -1,4 +1,5 @@
 import SingleImageSection from '../../components/SingleImageSection';
+import Image from 'next/image';
 
 export default function ContactUsPage() {
   return (
@@ -18,38 +19,41 @@ export default function ContactUsPage() {
         ></div>
 
         {/* Heading */}
-<h1
-  className="relative z-20 text-center text-[#E3010F] font-normal leading-[0.55] text-3xl sm:text-5xl md:text-[6rem]"
-  style={{ fontFamily: "Great Vibes, cursive" }}
->
-  Contact Us
-</h1>
-
+        <h1
+          className="relative z-20 text-center text-[#E3010F] font-normal leading-[0.55] text-3xl sm:text-5xl md:text-[6rem]"
+          style={{ fontFamily: "Great Vibes, cursive" }}
+        >
+          Contact Us
+        </h1>
       </div>
 
       {/* Main Section 1 */}
       <div className="grid grid-cols-2 gap-4 sm:gap-10 px-4 sm:px-10 py-6 sm:py-8 max-w-6xl mx-auto h-[167px] items-center">
         {/* Left text */}
         <div className="flex flex-col gap-2" style={{ width: '100%', maxWidth: '530px' }}>
-          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold">Get in touch with us.</h2>
-          <p className="text-base sm:text-lg md:text-2xl">We're here to assist you.</p>
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold">
+            Get in touch with us
+          </h2>
+          <p className="text-base sm:text-lg md:text-2xl">
+            We&apos;re here to assist you.
+          </p>
         </div>
 
         {/* Right social icons */}
         <div className="flex flex-col items-center justify-center gap-4 ml-auto">
           <a href="#" aria-label="Instagram">
             <div className="w-8 h-8 flex items-center justify-center rounded-full border border-white">
-              <img src="/instagram-red.svg" alt="Instagram" className="w-4 h-4" />
+              <Image src="/instagram-red.svg" alt="Instagram" width={16} height={16} />
             </div>
           </a>
           <a href="#" aria-label="Facebook">
             <div className="w-8 h-8 flex items-center justify-center rounded-full border border-white">
-              <img src="/facebook-red.svg" alt="Facebook" className="w-4 h-4" />
+              <Image src="/facebook-red.svg" alt="Facebook" width={16} height={16} />
             </div>
           </a>
           <a href="#" aria-label="Twitter">
             <div className="w-8 h-8 flex items-center justify-center rounded-full border border-white">
-              <img src="/twitter-red.svg" alt="Twitter" className="w-4 h-4" />
+              <Image src="/twitter-red.svg" alt="Twitter" width={16} height={16} />
             </div>
           </a>
         </div>

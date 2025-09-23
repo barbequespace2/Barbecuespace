@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import Image from 'next/image';
 import localFont from 'next/font/local';
 import AOSProvider from '@/components/AOSProvider'; // ✅ Import AOSProvider
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 const greatVibes = localFont({
   src: '../../public/fonts/GreatVibes-Regular.ttf',
   variable: '--font-great-vibes',

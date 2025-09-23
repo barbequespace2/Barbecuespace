@@ -42,6 +42,7 @@ export default function AboutUsPage() {
 
       {/* Main content container */}
       <div className="px-4 md:px-16">
+
         {/* First Single Image Section */}
         <div data-aos="fade-up" data-aos-delay="200">
           <SingleImageSection
@@ -54,6 +55,7 @@ export default function AboutUsPage() {
 
         {/* Three Content Divs */}
         <div className="flex flex-col gap-8 lg:gap-16 mt-16 max-w-7xl mx-auto">
+
           {/* First Div */}
           <div
             className="flex flex-col items-start p-4"
@@ -67,7 +69,7 @@ export default function AboutUsPage() {
               At Barbecue Space, our mission is to redefine the dining experience. We believe a restaurant should be more than just a place to eat; it should be a space where people can come together to enjoy delicious food, great company, and a warm, inviting atmosphere. Our journey began with the simple idea of sharing our passion for food and bringing innovative, high-quality dishes to the Thiruvananthapuram community.
             </p>
             <p className="mt-4 text-white font-satoshi text-lg font-normal leading-[160%]">
-              We are committed to using the best ingredients and creating a diverse menu that caters to all tastes, whether you're a vegetarian or a meat lover. Our goal is to make every visit a memorable one, where our guests can enjoy mouth-watering food and exceptional service in a friendly setting.
+              We are committed to using the best ingredients and creating a diverse menu that caters to all tastes, whether you&apos;re a vegetarian or a meat lover. Our goal is to make every visit a memorable one, where our guests can enjoy mouth-watering food and exceptional service in a friendly setting.
             </p>
             <Image
               src="/about-image.png"
@@ -107,10 +109,10 @@ export default function AboutUsPage() {
               Our Philosophy
             </h2>
             <p className="mt-4 text-white font-satoshi text-lg font-normal leading-[160%]">
-              What sets Barbecue Space apart is our dedication to being a "game changer" in the food industry. We believe in innovation and variety. Our menu is a reflection of this philosophy, offering a wide range of options that cater to every food lover. From our signature charcoal-grilled items and rich Arabian Kuzhimanthi to unique preparations like our Jamaican Mandi, we're constantly exploring new flavors to delight your palate.
+              What sets Barbecue Space apart is our dedication to being a &quot;game changer&quot; in the food industry. We believe in innovation and variety. Our menu is a reflection of this philosophy, offering a wide range of options that cater to every food lover. From our signature charcoal-grilled items and rich Arabian Kuzhimanthi to unique preparations like our Jamaican Mandi, we&apos;re constantly exploring new flavors to delight your palate.
             </p>
             <p className="mt-4 text-white font-satoshi text-lg font-normal leading-[160%]">
-              We’ve carefully crafted a menu that is both delicious and exciting. Whether you're a fan of our flavorful grilled chicken or you want to try a new vegetarian dish, you'll find something you love. We are proud of our food and can't wait for you to experience the passion we put into every meal.
+              We&apos;ve carefully crafted a menu that is both delicious and exciting. Whether you&apos;re a fan of our flavorful grilled chicken or you want to try a new vegetarian dish, you&apos;ll find something you love. We are proud of our food and can&apos;t wait for you to experience the passion we put into every meal.
             </p>
           </div>
         </div>
@@ -128,6 +130,7 @@ export default function AboutUsPage() {
             height={100}
           />
         </div>
+
       </div>
     </div>
   );

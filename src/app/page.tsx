@@ -3,7 +3,7 @@ import Image from 'next/image';
 import ImageCarousel from '@/components/ImageCarousel';
 import SingleImageSection from '@/components/SingleImageSection';
 import { Great_Vibes, Imperial_Script } from 'next/font/google';
-
+import { SpeedInsights } from "@vercel/speed-insights/next"
 const greatVibes = Great_Vibes({ subsets: ['latin'], weight: '400' });
 const imperialScript = Imperial_Script({ subsets: ['latin'], weight: '400' });
 
