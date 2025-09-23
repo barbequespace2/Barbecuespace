@@ -17,7 +17,7 @@ export default function ContactUsPage() {
   }, []);
 
   return (
-    <div className="bg-[#181818] text-white">
+    <div className="bg-[#181818] text-white min-h-screen">
 
       {/* Hero Section */}
       <div
@@ -35,7 +35,7 @@ export default function ContactUsPage() {
 
         <h1
           className="relative z-20 text-center text-[#E3010F] font-normal leading-[0.55] text-3xl sm:text-5xl md:text-[6rem]"
-          style={{ fontFamily: "Great Vibes, cursive" }}
+          style={{ fontFamily: "Great Vibes, cursive", top: "60px" }}
           data-aos="zoom-in"
         >
           Contact Us
