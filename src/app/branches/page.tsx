@@ -172,14 +172,15 @@ export default function BranchesPage() {
 
         {/* Hero Content */}
         <div className="relative z-[3] text-center">
-          <h1
-  className={`${greatVibes.className} text-[#E3010F] font-normal text-4xl sm:text-5xl md:text-7xl lg:text-[100px] leading-[55%] pt-32 text-center`}
+<h1
+  className={`${greatVibes.className} text-[#E3010F] font-normal text-4xl sm:text-5xl md:text-7xl lg:text-[100px] leading-[55%] pt-40 text-center`}
 >
   Branches
 </h1>
 
+
           <p
-            className="mt-8 font-satoshi text-white"
+            className="mt-3 font-satoshi text-white"
             style={{
               fontSize: '22px',
               fontWeight: 400,
