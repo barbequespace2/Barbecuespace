@@ -21,14 +21,14 @@ export default function Header() {
   return (
     <>
       <header
-  className="fixed inset-x-0 top-0 z-50 flex items-center justify-between 
-             border-b-3 border-b-[rgba(125,1,8,0.50)] 
-             bg-[#181818] md:bg-black 
-             px-4 py-4 
-             md:top-[33px] md:mx-auto md:max-w-[1243px] 
-             md:rounded-[20px] md:px-[70px] md:justify-normal"
->
-
+        className="fixed inset-x-0 top-0 z-50 flex items-center justify-between 
+                   border-b-3 border-b-[rgba(125,1,8,0.50)] 
+                   bg-[#181818] md:bg-black 
+                   px-4 py-4 
+                   md:top-[33px] md:mx-auto md:max-w-[1243px] 
+                   md:rounded-[20px] md:px-[70px] md:justify-normal"
+        style={{ fontFamily: 'var(--font-satoshi)' }} // Apply Satoshi font
+      >
         {/* Left Column (Hamburger - only mobile) */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}

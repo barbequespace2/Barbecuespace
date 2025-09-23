@@ -31,44 +31,57 @@ export default function HomePage() {
         </div>
 
         {/* Right Side: Text Content */}
-        <div
-          className="mt-10 md:mt-0 md:ml-0 md:pl-12 text-center md:text-left flex flex-col items-center md:items-start max-w-[700px]"
-          data-aos="fade-left"
-          data-aos-duration="700"
-        >
-          <h1 className="text-white font-satoshi text-[36px] md:text-[50px] font-bold leading-none">
-            Where Flavors Come <span className="font-satoshi italic">Alive</span> in
-          </h1>
-
-          <div
-            className="flex justify-center md:justify-start items-end mt-4"
-            data-aos="zoom-in"
-            data-aos-delay="150"
-            data-aos-duration="700"
-          >
-<h2
-  className={`${imperialScript.className} text-[#E3010F] text-[120px] md:text-[248.303px] font-normal leading-none -mb-6 md:-mb-10`}
+{/* Right Side: Text Content */}
+{/* Right Side: Text Content */}
+<div
+  className="mt-10 md:mt-0 md:ml-0 md:pl-12 text-center md:text-left flex flex-col items-center md:items-start max-w-[900px]" // increased from 700px
+  data-aos="fade-left"
+  data-aos-duration="700"
+  style={{ fontFamily: 'var(--font-satoshi)' }}
 >
-  T
-</h2>
+<h1 
+  className="relative z-30 text-white text-[36px] md:text-[50px] font-bold leading-none top-20 md:top-32 w-full"
+>
+  Where Flavors Come <span className="italic">Alive</span> in
+</h1>
+
+
+
+
+
+  <div
+    className="flex justify-center md:justify-start items-end mt-4"
+    data-aos="zoom-in"
+    data-aos-delay="150"
+    data-aos-duration="700"
+  >
+    <h2
+      className={`${imperialScript.className} text-[#E3010F] text-[120px] md:text-[248.303px] font-normal leading-none -mb-6 md:-mb-10`}
+    >
+      T
+    </h2>
 
             <h2 className="text-[#E3010F] font-greatVibes text-[72px] md:text-[112.047px] font-normal leading-none"
               style={{ fontFamily: "Great Vibes, cursive" }}>
               rivandrum
             </h2>
-          </div>
+  </div>
 
-          <div
-            className="mt-6 md:mt-8 max-w-[594px] text-center md:text-left font-satoshi text-[18px] md:text-[22px] font-normal leading-normal"
-            data-aos="fade-up"
-            data-aos-delay="300"
-            data-aos-duration="700"
-          >
-            For those with pure food indulgence in mind, come next door and sate your
-            desires with our ever changing internationally and seasonally inspired small
-            plates. We love food, lots of different food, just like you.
-          </div>
-        </div>
+<div
+  className="mt-6 md:mt-8 max-w-[594px] text-center font-normal text-[18px] leading-normal mx-auto"
+  data-aos="fade-up"
+  data-aos-delay="300"
+  data-aos-duration="700"
+  style={{ fontFamily: 'var(--font-satoshi)' }}
+>
+  For those with pure food indulgence in mind, come next door and sate your
+  desires with our ever changing internationally and seasonally inspired small
+  plates. We love food, lots of different food, just like you.
+</div>
+
+</div>
+
+
       </section>
 
       {/* About Section */}
