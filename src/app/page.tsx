@@ -95,15 +95,16 @@ export default function HomePage() {
           <h2 className="text-white font-satoshi text-4xl md:text-5xl font-bold">
             About
           </h2>
-          <h3
-            className="text-[#E3010F] font-greatVibes text-6xl md:text-8xl font-normal leading-[55.764%]"
-            data-aos="fade-right"
-            data-aos-delay="150"
-            data-aos-duration="700"
-            style={{ fontFamily: "Great Vibes, cursive" }}
-          >
-            Barbecue Space
-          </h3>
+<h3
+  className="relative text-[#E3010F] font-greatVibes text-6xl md:text-8xl font-normal leading-[55.764%]"
+  data-aos="fade-right"
+  data-aos-delay="150"
+  data-aos-duration="700"
+  style={{ fontFamily: "Great Vibes, cursive", top: "10px" }} // moves it down by 20px
+>
+  Barbecue Space
+</h3>
+
           <p
             className="mt-6 md:mt-8 font-satoshi text-[18px] md:text-[20px] font-normal leading-normal"
             data-aos="fade-left"
@@ -189,7 +190,7 @@ export default function HomePage() {
             data-aos-delay="650"
             data-aos-duration="700"
           >
-            View Menu
+            View The Full Menu
           </button>
         </div>
       </section>

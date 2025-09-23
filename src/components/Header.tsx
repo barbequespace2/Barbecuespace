@@ -75,7 +75,7 @@ export default function Header() {
         <div className="hidden md:flex md:flex-1 md:justify-end">
           <Link href="/contactus">
             <button className="flex items-center justify-center gap-2.5 rounded-[500px] bg-[#E3010F] px-[35px] py-[14px] font-bold text-white">
-              Contact Us
+              CONTACT US
             </button>
           </Link>
         </div>
