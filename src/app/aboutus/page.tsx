@@ -32,12 +32,13 @@ export default function AboutUsPage() {
           quality={100}
           className="z-0 object-cover"
         />
-        <h1
-          className="relative z-20 text-[#E3010F] font-great-vibes text-[110px] font-normal leading-[61px] text-center"
-          style={{ fontFamily: "Great Vibes, cursive" }}
-        >
-          About Us
-        </h1>
+<h1
+  className="relative z-20 text-[#E3010F] font-great-vibes text-[110px] font-normal leading-[61px] text-center"
+  style={{ fontFamily: "Great Vibes, cursive", top: "60px" }} // moves it 20px down
+>
+  About Us
+</h1>
+
       </div>
 
       {/* Main content container */}
@@ -54,7 +55,7 @@ export default function AboutUsPage() {
         </div>
 
         {/* Three Content Divs */}
-        <div className="flex flex-col gap-8 lg:gap-16 mt-16 max-w-7xl mx-auto">
+        <div className="flex flex-col gap-8 lg:gap-16 mt-0 max-w-7xl mx-auto">
 
           {/* First Div */}
           <div
