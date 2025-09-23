@@ -4,6 +4,9 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Image from 'next/image';
+import { Great_Vibes } from 'next/font/google';
+
+const greatVibes = Great_Vibes({ subsets: ['latin'], weight: '400' });
 
 // --- MOCK DATA ---
 const branchesData = [
@@ -170,16 +173,11 @@ export default function BranchesPage() {
         {/* Hero Content */}
         <div className="relative z-[3] text-center">
           <h1
-            className="font-great-vibes text-[#E3010F]"
-            style={{
-              fontSize: '100px',
-              fontWeight: 400,
-              lineHeight: '55.764%',
-              paddingTop: '120px',
-            }}
-          >
-            Branches
-          </h1>
+  className={`${greatVibes.className} text-[#E3010F] font-normal text-4xl sm:text-5xl md:text-7xl lg:text-[100px] leading-[55%] pt-32 text-center`}
+>
+  Branches
+</h1>
+
           <p
             className="mt-8 font-satoshi text-white"
             style={{
