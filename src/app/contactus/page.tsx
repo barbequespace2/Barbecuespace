@@ -1,15 +1,30 @@
+'use client';
+
+import { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import SingleImageSection from '../../components/SingleImageSection';
 import Image from 'next/image';
 
 export default function ContactUsPage() {
+  useEffect(() => {
+    AOS.init({
+      duration: 900, // animation duration
+      once: false,   // animate every time you scroll
+      easing: 'ease-in-out',
+      offset: 100,   // trigger slightly before element is in viewport
+    });
+  }, []);
+
   return (
     <div className="bg-[#181818] text-white">
+
       {/* Hero Section */}
       <div
         className="relative flex items-center justify-center h-[250px] sm:h-[300px] md:h-[400px] bg-cover bg-center"
         style={{ backgroundImage: "url('/contact-bg.png')" }}
+        data-aos="fade-in"
       >
-        {/* Gradient overlay only on md and above */}
         <div
           className="hidden md:block absolute inset-0 z-10"
           style={{
@@ -18,10 +33,10 @@ export default function ContactUsPage() {
           }}
         ></div>
 
-        {/* Heading */}
         <h1
           className="relative z-20 text-center text-[#E3010F] font-normal leading-[0.55] text-3xl sm:text-5xl md:text-[6rem]"
           style={{ fontFamily: "Great Vibes, cursive" }}
+          data-aos="zoom-in"
         >
           Contact Us
         </h1>
@@ -30,7 +45,7 @@ export default function ContactUsPage() {
       {/* Main Section 1 */}
       <div className="grid grid-cols-2 gap-4 sm:gap-10 px-4 sm:px-10 py-6 sm:py-8 max-w-6xl mx-auto h-[167px] items-center">
         {/* Left text */}
-        <div className="flex flex-col gap-2" style={{ width: '100%', maxWidth: '530px' }}>
+        <div className="flex flex-col gap-2" style={{ width: '100%', maxWidth: '530px' }} data-aos="fade-right">
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold">
             Get in touch with us
           </h2>
@@ -40,7 +55,7 @@ export default function ContactUsPage() {
         </div>
 
         {/* Right social icons */}
-        <div className="flex flex-col items-center justify-center gap-4 ml-auto">
+        <div className="flex flex-col items-center justify-center gap-4 ml-auto" data-aos="fade-left">
           <a href="#" aria-label="Instagram">
             <div className="w-8 h-8 flex items-center justify-center rounded-full border border-white">
               <Image src="/instagram-red.svg" alt="Instagram" width={16} height={16} />
@@ -60,9 +75,8 @@ export default function ContactUsPage() {
       </div>
 
       {/* Main Section 2 - Contact Form */}
-      <div className="px-4 sm:px-10 py-12 sm:py-16 max-w-6xl mx-auto">
+      <div className="px-4 sm:px-10 py-12 sm:py-16 max-w-6xl mx-auto" data-aos="fade-up">
         <form className="flex flex-col gap-6">
-          {/* Row: Name, Phone, Email */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             <input
               type="text"
@@ -80,15 +94,11 @@ export default function ContactUsPage() {
               className="bg-transparent border-b border-gray-500 focus:outline-none text-sm sm:text-base"
             />
           </div>
-
-          {/* Message box */}
           <textarea
             placeholder="Message"
             rows={4}
             className="w-full bg-transparent border-b border-gray-500 focus:outline-none text-sm sm:text-base"
           />
-
-          {/* Send button */}
           <button
             type="submit"
             className="self-start px-6 sm:px-8 py-2 sm:py-3 text-white rounded-full text-sm sm:text-base"
@@ -101,16 +111,13 @@ export default function ContactUsPage() {
 
       {/* Main Section 3 - Contact Info */}
       <div className="px-4 sm:px-10 py-12 sm:py-16 max-w-6xl mx-auto flex flex-wrap justify-between gap-6">
-        {/* First column */}
-        <div className="flex-1 min-w-[180px]">
+        <div className="flex-1 min-w-[180px]" data-aos="fade-up">
           <h3 className="text-sm sm:text-base font-normal">Contact now</h3>
           <p className="mt-2 text-xl sm:text-2xl md:text-2xl font-bold">
             We are always happy <br /> to assist you
           </p>
         </div>
-
-        {/* Second column */}
-        <div className="flex-1 min-w-[180px]">
+        <div className="flex-1 min-w-[180px]" data-aos="fade-up" data-aos-delay="150">
           <h4 className="text-sm sm:text-base font-bold">Email Address</h4>
           <div className="w-12 h-[2px] bg-white mt-1 mb-2"></div>
           <p className="font-bold text-sm sm:text-base">help@info.com</p>
@@ -119,9 +126,7 @@ export default function ContactUsPage() {
             <br /> Monday - Friday 6 am to 8 pm EST
           </p>
         </div>
-
-        {/* Third column */}
-        <div className="flex-1 min-w-[180px]">
+        <div className="flex-1 min-w-[180px]" data-aos="fade-up" data-aos-delay="300">
           <h4 className="text-sm sm:text-base font-bold">Number</h4>
           <p className="font-bold text-sm sm:text-base">(808) 998-34256</p>
           <p className="mt-2 text-xs sm:text-sm">
@@ -132,7 +137,7 @@ export default function ContactUsPage() {
       </div>
 
       {/* Bottom Section */}
-      <div className="px-4 sm:px-10 max-w-6xl mx-auto flex justify-center pb-20">
+      <div className="px-4 sm:px-10 max-w-6xl mx-auto flex justify-center pb-20" data-aos="fade-up" data-aos-delay="350">
         <SingleImageSection
           imageSrc="/about-image.svg"
           altText="Barbecue Space restaurant interior"
