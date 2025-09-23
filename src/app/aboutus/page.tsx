@@ -34,6 +34,7 @@ export default function AboutUsPage() {
         />
         <h1
           className="relative z-20 text-[#E3010F] font-great-vibes text-[110px] font-normal leading-[61px] text-center"
+          style={{ fontFamily: "Great Vibes, cursive" }}
         >
           About Us
         </h1>
