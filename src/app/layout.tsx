@@ -30,6 +30,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${greatVibes.variable} ${imperialScript.variable} ${satoshi.variable}`}>
+      <head>
+         <link
+          href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="bg-[#181818]">
         <AOSProvider>
           <div className="relative">

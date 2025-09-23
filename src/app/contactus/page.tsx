@@ -4,89 +4,76 @@ export default function ContactUsPage() {
   return (
     <div className="bg-[#181818] text-white">
       {/* Hero Section */}
-            {/* Hero Section */}
-      {/* Hero Section */}
-<div
-  className="relative flex items-center justify-center h-[400px] bg-cover bg-center"
-  style={{ backgroundImage: "url('/contact-bg.png')" }}
+      <div
+        className="relative flex items-center justify-center h-[250px] sm:h-[300px] md:h-[400px] bg-cover bg-center"
+        style={{ backgroundImage: "url('/contact-bg.png')" }}
+      >
+        {/* Gradient overlay only on md and above */}
+        <div
+          className="hidden md:block absolute inset-0 z-10"
+          style={{
+            background:
+              'linear-gradient(0deg, #171717 5%, rgba(23, 23, 23, 0.1) 100%)',
+          }}
+        ></div>
+
+        {/* Heading */}
+<h1
+  className="relative z-20 text-center text-[#E3010F] font-normal leading-[0.55] text-3xl sm:text-5xl md:text-[6rem]"
+  style={{ fontFamily: "Great Vibes, cursive" }}
 >
-  {/* Gradient overlay */}
-  <div
-    className="absolute inset-0 z-10"
-    style={{
-      background:
-        'linear-gradient(0deg, #171717 5%, rgba(23, 23, 23, 0.1) 100%)',
-    }}
-  ></div>
+  Contact Us
+</h1>
 
-  {/* Heading */}
-  <h1
-    className="relative z-20"
-    style={{
-      color: "#E3010F",
-      textAlign: "center",
-      fontFamily: "Great Vibes, cursive",
-      fontSize: "110.538px",
-      fontWeight: 400,
-      lineHeight: "55.764%",
-    }}
-  >
-    Contact Us
-  </h1>
-</div>
-
-
+      </div>
 
       {/* Main Section 1 */}
-            {/* Main Section 1 */}
-<div className="grid grid-cols-2 gap-10 px-10 py-8 max-w-6xl mx-auto h-[167px] items-center">
-  {/* Left text */}
-  <div className="flex flex-col gap-2" style={{ width: '530px' }}>
-    <h2 className="text-5xl font-bold">Get in touch with us.</h2>
-    <p className="text-5xl">We're here to assist you.</p>
-  </div>
+      <div className="grid grid-cols-2 gap-4 sm:gap-10 px-4 sm:px-10 py-6 sm:py-8 max-w-6xl mx-auto h-[167px] items-center">
+        {/* Left text */}
+        <div className="flex flex-col gap-2" style={{ width: '100%', maxWidth: '530px' }}>
+          <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold">Get in touch with us.</h2>
+          <p className="text-base sm:text-lg md:text-2xl">We're here to assist you.</p>
+        </div>
 
-  {/* Right social icons */}
-  <div className="flex flex-col items-center justify-center gap-4 ml-auto">
-    <a href="#" aria-label="Instagram">
-      <div className="w-8 h-8 flex items-center justify-center rounded-full border border-white">
-        <img src="/instagram-red.svg" alt="Instagram" className="w-4 h-4" />
+        {/* Right social icons */}
+        <div className="flex flex-col items-center justify-center gap-4 ml-auto">
+          <a href="#" aria-label="Instagram">
+            <div className="w-8 h-8 flex items-center justify-center rounded-full border border-white">
+              <img src="/instagram-red.svg" alt="Instagram" className="w-4 h-4" />
+            </div>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <div className="w-8 h-8 flex items-center justify-center rounded-full border border-white">
+              <img src="/facebook-red.svg" alt="Facebook" className="w-4 h-4" />
+            </div>
+          </a>
+          <a href="#" aria-label="Twitter">
+            <div className="w-8 h-8 flex items-center justify-center rounded-full border border-white">
+              <img src="/twitter-red.svg" alt="Twitter" className="w-4 h-4" />
+            </div>
+          </a>
+        </div>
       </div>
-    </a>
-    <a href="#" aria-label="Facebook">
-      <div className="w-8 h-8 flex items-center justify-center rounded-full border border-white">
-        <img src="/facebook-red.svg" alt="Facebook" className="w-4 h-4" />
-      </div>
-    </a>
-    <a href="#" aria-label="Twitter">
-      <div className="w-8 h-8 flex items-center justify-center rounded-full border border-white">
-        <img src="/twitter-red.svg" alt="Twitter" className="w-4 h-4" />
-      </div>
-    </a>
-  </div>
-</div>
-
-
 
       {/* Main Section 2 - Contact Form */}
-      <div className="px-10 py-16 max-w-6xl mx-auto">
+      <div className="px-4 sm:px-10 py-12 sm:py-16 max-w-6xl mx-auto">
         <form className="flex flex-col gap-6">
           {/* Row: Name, Phone, Email */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             <input
               type="text"
               placeholder="Name"
-              className="bg-transparent border-b border-gray-500 focus:outline-none"
+              className="bg-transparent border-b border-gray-500 focus:outline-none text-sm sm:text-base"
             />
             <input
               type="text"
               placeholder="Phone Number"
-              className="bg-transparent border-b border-gray-500 focus:outline-none"
+              className="bg-transparent border-b border-gray-500 focus:outline-none text-sm sm:text-base"
             />
             <input
               type="email"
               placeholder="Email"
-              className="bg-transparent border-b border-gray-500 focus:outline-none"
+              className="bg-transparent border-b border-gray-500 focus:outline-none text-sm sm:text-base"
             />
           </div>
 
@@ -94,13 +81,13 @@ export default function ContactUsPage() {
           <textarea
             placeholder="Message"
             rows={4}
-            className="w-full bg-transparent border-b border-gray-500 focus:outline-none"
+            className="w-full bg-transparent border-b border-gray-500 focus:outline-none text-sm sm:text-base"
           />
 
           {/* Send button */}
           <button
             type="submit"
-            className="self-start px-8 py-3 text-white rounded-full"
+            className="self-start px-6 sm:px-8 py-2 sm:py-3 text-white rounded-full text-sm sm:text-base"
             style={{ background: "#E3010F" }}
           >
             Send Message
@@ -108,43 +95,40 @@ export default function ContactUsPage() {
         </form>
       </div>
 
-            {/* Main Section 3 - Contact Info */}
-      <div className="px-10 py-16 max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {/* First column */}
-          <div className="text-left">
-            <h3 className="text-sm font-normal">Contact now</h3>
-            <p className="mt-2 text-2xl font-bold">
-              We are always happy <br /> to assist you
-            </p>
-          </div>
+      {/* Main Section 3 - Contact Info */}
+      <div className="px-4 sm:px-10 py-12 sm:py-16 max-w-6xl mx-auto flex flex-wrap justify-between gap-6">
+        {/* First column */}
+        <div className="flex-1 min-w-[180px]">
+          <h3 className="text-sm sm:text-base font-normal">Contact now</h3>
+          <p className="mt-2 text-xl sm:text-2xl md:text-2xl font-bold">
+            We are always happy <br /> to assist you
+          </p>
+        </div>
 
-          {/* Second column */}
-          <div className="text-left">
-            <h4 className="text-sm font-bold">Email Address</h4>
-            <div className="w-12 h-[2px] bg-white mt-1 mb-2"></div>
-            <p className="font-bold text-sm">help@info.com</p>
-            <p className="mt-2 text-xs">
-              Assistance hours:
-              <br /> Monday - Friday 6 am to 8 pm EST
-            </p>
-          </div>
+        {/* Second column */}
+        <div className="flex-1 min-w-[180px]">
+          <h4 className="text-sm sm:text-base font-bold">Email Address</h4>
+          <div className="w-12 h-[2px] bg-white mt-1 mb-2"></div>
+          <p className="font-bold text-sm sm:text-base">help@info.com</p>
+          <p className="mt-2 text-xs sm:text-sm">
+            Assistance hours:
+            <br /> Monday - Friday 6 am to 8 pm EST
+          </p>
+        </div>
 
-          {/* Third column */}
-          <div className="text-left">
-            <h4 className="text-sm font-bold">Number</h4>
-            <p className="font-bold text-sm">(808) 998-34256</p>
-            <p className="mt-2 text-xs">
-              Assistance hours:
-              <br /> Monday - Friday 6 am to 8 pm EST
-            </p>
-          </div>
+        {/* Third column */}
+        <div className="flex-1 min-w-[180px]">
+          <h4 className="text-sm sm:text-base font-bold">Number</h4>
+          <p className="font-bold text-sm sm:text-base">(808) 998-34256</p>
+          <p className="mt-2 text-xs sm:text-sm">
+            Assistance hours:
+            <br /> Monday - Friday 6 am to 8 pm EST
+          </p>
         </div>
       </div>
 
-
       {/* Bottom Section */}
-      <div className="px-10  max-w-6xl mx-auto flex justify-center">
+      <div className="px-4 sm:px-10 max-w-6xl mx-auto flex justify-center pb-20">
         <SingleImageSection
           imageSrc="/about-image.svg"
           altText="Barbecue Space restaurant interior"
