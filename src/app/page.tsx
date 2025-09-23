@@ -2,6 +2,10 @@
 import Image from 'next/image';
 import ImageCarousel from '@/components/ImageCarousel';
 import SingleImageSection from '@/components/SingleImageSection';
+import { Great_Vibes, Imperial_Script } from 'next/font/google';
+
+const greatVibes = Great_Vibes({ subsets: ['latin'], weight: '400' });
+const imperialScript = Imperial_Script({ subsets: ['latin'], weight: '400' });
 
 export default function HomePage() {
   return (
@@ -42,10 +46,14 @@ export default function HomePage() {
             data-aos-delay="150"
             data-aos-duration="700"
           >
-            <h2 className="text-[#E3010F] font-imperialScript text-[120px] md:text-[248.303px] font-normal leading-none -mb-6 md:-mb-10">
-              T
-            </h2>
-            <h2 className="text-[#E3010F] font-greatVibes text-[72px] md:text-[112.047px] font-normal leading-none">
+<h2
+  className={`${imperialScript.className} text-[#E3010F] text-[120px] md:text-[248.303px] font-normal leading-none -mb-6 md:-mb-10`}
+>
+  T
+</h2>
+
+            <h2 className="text-[#E3010F] font-greatVibes text-[72px] md:text-[112.047px] font-normal leading-none"
+              style={{ fontFamily: "Great Vibes, cursive" }}>
               rivandrum
             </h2>
           </div>
@@ -79,6 +87,7 @@ export default function HomePage() {
             data-aos="fade-right"
             data-aos-delay="150"
             data-aos-duration="700"
+            style={{ fontFamily: "Great Vibes, cursive" }}
           >
             Barbecue Space
           </h3>
@@ -146,6 +155,7 @@ export default function HomePage() {
               data-aos="zoom-in"
               data-aos-delay="350"
               data-aos-duration="700"
+              style={{ fontFamily: "Great Vibes, cursive" }}
             >
               Our Menu
             </h3>
