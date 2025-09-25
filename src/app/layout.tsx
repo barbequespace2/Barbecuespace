@@ -5,8 +5,9 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Image from 'next/image';
 import localFont from 'next/font/local';
-import AOSProvider from '@/components/AOSProvider'; // ✅ Import AOSProvider
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import AOSProvider from '@/components/AOSProvider';
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 const greatVibes = localFont({
   src: '../../public/fonts/GreatVibes-Regular.ttf',
   variable: '--font-great-vibes',
@@ -22,20 +23,62 @@ const satoshi = localFont({
   variable: '--font-satoshi',
 });
 
+// ✅ --- Enhanced SEO Metadata ---
 export const metadata: Metadata = {
-  title: 'My Responsive App',
-  description: 'Built with Next.js and Tailwind CSS',
+  // Sets the base URL for resolving images, etc.
+  metadataBase: new URL('https://barbecuespace.vercel.app'),
+
+  title: {
+    default: 'Barbecue Space Thiruvananthapuram',
+    template: `%s | Barbecue Space`, // Used for child pages, e.g., "Menu | Barbecue Space"
+  },
+  description: 'Discover the authentic taste of Arabic grills, smoky barbecues, and flavorful delights at Barbecue Space. A premium dining experience in Thiruvananthapuram.',
+  
+  keywords: ['barbecue', 'arabic grill', 'restaurant', 'Thiruvananthapuram', 'kuzhimandi', 'al-faham', 'dining', 'food in trivandrum'],
+
+  // --- Open Graph (for Facebook, LinkedIn, etc.) ---
+  openGraph: {
+    title: 'Barbecue Space | Authentic Arabic Grills & Smoky Barbecues',
+    description: 'A premium dining experience in Thiruvananthapuram, serving the best in smoky delights.',
+    url: 'https://barbecuespace.vercel.app',
+    siteName: 'Barbecue Space',
+    images: [
+      {
+        url: '/about-image.svg', // IMPORTANT: Create a 1200x630px image and place it in the /public folder
+        width: 1200,
+        height: 630,
+        alt: 'A platter of delicious barbecue from Barbecue Space',
+      },
+    ],
+    locale: 'en_IN',
+    type: 'website',
+  },
+
+  // --- Twitter Card ---
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Barbecue Space | Authentic Arabic Grills & Smoky Barbecues',
+    description: 'A premium dining experience in Thiruvananthapuram, serving the best in smoky delights.',
+    images: ['/about-image.svg'], // IMPORTANT: The same OG image will be used here
+  },
+
+  // --- Search Engine Instructions ---
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${greatVibes.variable} ${imperialScript.variable} ${satoshi.variable}`}>
-      <head>
-         <link
-          href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+      {/* ❌ The <head> tag is no longer needed here. Next.js handles it with the metadata object. */}
       <body className="bg-[#181818]">
         <AOSProvider>
           <div className="relative">
@@ -54,6 +97,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </div>
           </div>
         </AOSProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
