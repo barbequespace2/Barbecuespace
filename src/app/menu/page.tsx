@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Great_Vibes } from 'next/font/google';
+import SingleImageSection from '@/components/SingleImageSection';
 
 const greatVibes = Great_Vibes({ subsets: ['latin'], weight: '400' });
 
@@ -486,7 +487,7 @@ export default function MenuPage() {
         {/* Exotic Ice Cream & Falooda Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-20">
   {/* Exotic Ice Cream */}
-  <div className="col-span-2.5">
+  <div className="col-span-2">
     <h2 className={`${greatVibes.className} text-[#E3010F] text-4xl sm:text-5xl md:text-6xl mb-8 text-left`}>Exotic Ice Cream</h2>
     <ul className="space-y-2">
       {['Mint Candy', 'Bubble Chocolate', 'English Toffee'].map((item, idx) => (
@@ -504,8 +505,16 @@ export default function MenuPage() {
     </ul>
   </div>
 </div>
-        
+              <div className="px-4 sm:px-10 max-w-6xl mx-auto flex justify-center pb-0" data-aos="fade-up" data-aos-delay="350">
+        <SingleImageSection
+          imageSrc="/about-image.svg"
+          altText="Barbecue Space restaurant interior"
+          width={200}
+          height={100}
+        />
       </div>
+      </div>
+      
     </div>
   );
 }
