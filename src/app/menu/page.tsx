@@ -5,6 +5,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Great_Vibes } from 'next/font/google';
 import SingleImageSection from '@/components/SingleImageSection';
+import Image from 'next/image'; // Import Image for the new decorative images
 
 const greatVibes = Great_Vibes({ subsets: ['latin'], weight: '400' });
 
@@ -47,7 +48,17 @@ export default function MenuPage() {
       </div>
 
       {/* Main Menu Container */}
-      <div className="container mx-auto px-6 sm:px-8 lg:px-16 py-16">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-16 py-16 relative"> {/* Added relative to container for absolute children */}
+        
+        {/* Decorative Image 1: Top-Left */}
+        <Image 
+          src="/momo-space.svg" // Replace with your image path
+          alt="Decorative Momos"
+          width={250}
+          height={250}
+          className="absolute top-[9%] left-[65%] z-0  - hidden md:block"
+        />
+        
         {/* Starters Section */}
         <h2
           className={`${greatVibes.className} text-[#E3010F] font-normal text-4xl sm:text-5xl md:text-6xl mb-12 text-left`}
@@ -114,6 +125,15 @@ export default function MenuPage() {
             </ul>
           </div>
         </div>
+
+        {/* Decorative Image 2: Mid-Right */}
+        <Image
+          src="/shawarma-space.svg" // Replace with your image path
+          alt="Decorative Shawarma"
+          width={280}
+          height={280}
+          className="absolute top-[22%] right-[20%] z-0   hidden md:block"
+        />
 
         {/* Momos Section */}
         <h2 className={`${greatVibes.className} text-[#E3010F] text-4xl sm:text-5xl md:text-6xl mb-12 text-left`}>Momos</h2>
@@ -195,6 +215,15 @@ export default function MenuPage() {
             </ul>
           </div>
         </div>
+
+        {/* Decorative Image 3: Bottom-Left */}
+        <Image
+          src="/tea-space.svg" // Replace with your image path
+          alt="Decorative Tea"
+          width={220}
+          height={220}
+          className="absolute bottom-[5%] right-[10%] z-0   hidden md:block"
+        />
 
         {/* Al-Faham Section */}
         <h2 className={`${greatVibes.className} text-[#E3010F] text-4xl sm:text-5xl md:text-6xl mb-12 text-left`}>Al-Faham</h2>
@@ -454,6 +483,15 @@ export default function MenuPage() {
           </div>
         </div>
 
+        {/* Decorative Image 4: Bottom-Right */}
+        <Image
+          src="/cream-space.svg" // Replace with your image path
+          alt="Decorative Ice Cream"
+          width={250}
+          height={250}
+          className="absolute bottom-[28%] right-[18%] z-0  - hidden md:block"
+        />
+
         {/* Hot Beverages Section */}
         <div className="mb-20">
           <h2 className={`${greatVibes.className} text-[#E3010F] text-4xl sm:text-5xl md:text-6xl mb-8 text-left`}>Hot Beverages</h2>
@@ -486,33 +524,33 @@ export default function MenuPage() {
 
         {/* Exotic Ice Cream & Falooda Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-20">
-  {/* Exotic Ice Cream */}
-  <div className="col-span-2">
-    <h2 className={`${greatVibes.className} text-[#E3010F] text-4xl sm:text-5xl md:text-6xl mb-8 text-left`}>Exotic Ice Cream</h2>
-    <ul className="space-y-2">
-      {['Mint Candy', 'Bubble Chocolate', 'English Toffee'].map((item, idx) => (
-        <li key={idx} style={{color:'#FFF', fontFamily:'Satoshi', fontSize:'18px', fontWeight:500}}>{item}</li>
-      ))}
-    </ul>
-  </div>
-  {/* Falooda */}
-  <div className="col-span-1">
-    <h2 className={`${greatVibes.className} text-[#E3010F] text-4xl sm:text-5xl md:text-6xl mb-8 text-left`}>Falooda</h2>
-    <ul className="space-y-2">
-      {['Rabdi', 'Milk Candy', 'Dry Fruit'].map((item, idx) => (
-        <li key={idx} style={{color:'#FFF', fontFamily:'Satoshi', fontSize:'18px', fontWeight:500}}>{item}</li>
-      ))}
-    </ul>
-  </div>
-</div>
-              <div className="px-4 sm:px-10 max-w-6xl mx-auto flex justify-center pb-0" data-aos="fade-up" data-aos-delay="350">
-        <SingleImageSection
-          imageSrc="/about-image.svg"
-          altText="Barbecue Space restaurant interior"
-          width={200}
-          height={100}
-        />
-      </div>
+          {/* Exotic Ice Cream */}
+          <div className="col-span-2">
+            <h2 className={`${greatVibes.className} text-[#E3010F] text-4xl sm:text-5xl md:text-6xl mb-8 text-left`}>Exotic Ice Cream</h2>
+            <ul className="space-y-2">
+              {['Mint Candy', 'Bubble Chocolate', 'English Toffee'].map((item, idx) => (
+                <li key={idx} style={{color:'#FFF', fontFamily:'Satoshi', fontSize:'18px', fontWeight:500}}>{item}</li>
+              ))}
+            </ul>
+          </div>
+          {/* Falooda */}
+          <div className="col-span-1">
+            <h2 className={`${greatVibes.className} text-[#E3010F] text-4xl sm:text-5xl md:text-6xl mb-8 text-left`}>Falooda</h2>
+            <ul className="space-y-2">
+              {['Rabdi', 'Milk Candy', 'Dry Fruit'].map((item, idx) => (
+                <li key={idx} style={{color:'#FFF', fontFamily:'Satoshi', fontSize:'18px', fontWeight:500}}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className="px-4 sm:px-10 max-w-6xl mx-auto flex justify-center pb-0" data-aos="fade-up" data-aos-delay="350">
+          <SingleImageSection
+            imageSrc="/about-image.svg"
+            altText="Barbecue Space restaurant interior"
+            width={200}
+            height={100}
+          />
+        </div>
       </div>
       
     </div>
