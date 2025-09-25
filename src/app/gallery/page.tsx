@@ -28,8 +28,7 @@ function SingleImageSection({ imageSrc, altText, width, height }: { imageSrc: st
   );
 }
 
-// --- GALLERY CARD COMPONENT (MATCHING YOUR DESIGN SPECS) ---
-// --- GALLERY CARD COMPONENT (UPDATED DESIGN SPECS) ---
+// --- GALLERY CARD COMPONENT (MATCHING DESIGN SPECS) ---
 function GalleryCard({ src, alt }: { src: string; alt: string }) {
   return (
     <div
@@ -43,7 +42,7 @@ function GalleryCard({ src, alt }: { src: string; alt: string }) {
         aspectRatio: '375.933/211.87',
         background: '#000',
         borderRadius: '9.689px',
-        border: '0.969px solid #E3010F ',
+        border: '0.969px solid #E3010F',
       }}
       data-aos="zoom-in"
       data-aos-delay={100}
@@ -58,7 +57,6 @@ function GalleryCard({ src, alt }: { src: string; alt: string }) {
     </div>
   );
 }
-
 
 // --- MAIN GALLERY PAGE ---
 export default function GalleryPage() {
@@ -88,9 +86,14 @@ export default function GalleryPage() {
       </div>
 
       {/* Gallery Grid */}
-      <div className="container mx-auto px-4 py-16 flex flex-wrap justify-center gap-8">
+      <div className="container mx-auto px-4 py-16 flex flex-wrap justify-center gap-10 sm:gap-8">
         {galleryImages.map((img, idx) => (
-          <GalleryCard key={idx} src={img.src} alt={img.alt} />
+          <div
+            key={idx}
+            className="w-full sm:w-[48%] md:w-[375.933px] flex justify-center mb-6 sm:mb-0"
+          >
+            <GalleryCard src={img.src} alt={img.alt} />
+          </div>
         ))}
       </div>
 
