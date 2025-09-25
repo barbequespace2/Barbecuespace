@@ -54,20 +54,10 @@ export default function MenuPage() {
         </h2>
 
         {/* 4 Categories in a Row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-20">
           {/* Arabic */}
           <div>
-            <h3
-              className="mb-4"
-              style={{
-                color: '#E3010F',
-                fontFamily: 'Satoshi',
-                fontSize: '26px',
-                fontWeight: 700,
-              }}
-            >
-              Arabic
-            </h3>
+            <h3 className="mb-4 text-[#E3010F] font-satoshi text-[26px] font-bold">Arabic</h3>
             <ul className="space-y-2">
               {[
                 'French Fries',
@@ -77,15 +67,7 @@ export default function MenuPage() {
                 'Smoke & Honey Wings',
                 'Grilled Wings Platter',
               ].map((item, idx) => (
-                <li
-                  key={idx}
-                  style={{
-                    color: '#FFF',
-                    fontFamily: 'Satoshi',
-                    fontSize: '18px',
-                    fontWeight: 500,
-                  }}
-                >
+                <li key={idx} className="text-white font-satoshi text-[18px] font-medium">
                   {item}
                 </li>
               ))}
@@ -94,17 +76,7 @@ export default function MenuPage() {
 
           {/* Tandoor */}
           <div>
-            <h3
-              className="mb-4"
-              style={{
-                color: '#E3010F',
-                fontFamily: 'Satoshi',
-                fontSize: '26px',
-                fontWeight: 700,
-              }}
-            >
-              Tandoor
-            </h3>
+            <h3 className="mb-4 text-[#E3010F] font-satoshi text-[26px] font-bold">Tandoor</h3>
             <ul className="space-y-2">
               {[
                 'Paneer Tikka',
@@ -113,15 +85,7 @@ export default function MenuPage() {
                 'Afghani Chicken Tikka',
                 'Chicken Tikka Platter',
               ].map((item, idx) => (
-                <li
-                  key={idx}
-                  style={{
-                    color: '#FFF',
-                    fontFamily: 'Satoshi',
-                    fontSize: '18px',
-                    fontWeight: 500,
-                  }}
-                >
+                <li key={idx} className="text-white font-satoshi text-[18px] font-medium">
                   {item}
                 </li>
               ))}
@@ -130,17 +94,7 @@ export default function MenuPage() {
 
           {/* Chinese */}
           <div>
-            <h3
-              className="mb-4"
-              style={{
-                color: '#E3010F',
-                fontFamily: 'Satoshi',
-                fontSize: '26px',
-                fontWeight: 700,
-              }}
-            >
-              Chinese
-            </h3>
+            <h3 className="mb-4 text-[#E3010F] font-satoshi text-[26px] font-bold">Chinese</h3>
             <ul className="space-y-2">
               {[
                 'Crispy Fried Veg',
@@ -150,15 +104,7 @@ export default function MenuPage() {
                 'Beef Dry Fry (BDF)',
                 'Golden Fried Prawns',
               ].map((item, idx) => (
-                <li
-                  key={idx}
-                  style={{
-                    color: '#FFF',
-                    fontFamily: 'Satoshi',
-                    fontSize: '18px',
-                    fontWeight: 500,
-                  }}
-                >
+                <li key={idx} className="text-white font-satoshi text-[18px] font-medium">
                   {item}
                 </li>
               ))}
@@ -167,31 +113,102 @@ export default function MenuPage() {
 
           {/* Naadan */}
           <div>
-            <h3
-              className="mb-4"
-              style={{
-                color: '#E3010F',
-                fontFamily: 'Satoshi',
-                fontSize: '26px',
-                fontWeight: 700,
-              }}
-            >
-              Naadan
-            </h3>
+            <h3 className="mb-4 text-[#E3010F] font-satoshi text-[26px] font-bold">Naadan</h3>
             <ul className="space-y-2">
               {['Wings Fry', 'Chicken Leg Fry', 'Chicken 65', 'Tawa Prawns'].map((item, idx) => (
-                <li
-                  key={idx}
-                  style={{
-                    color: '#FFF',
-                    fontFamily: 'Satoshi',
-                    fontSize: '18px',
-                    fontWeight: 500,
-                  }}
-                >
+                <li key={idx} className="text-white font-satoshi text-[18px] font-medium">
                   {item}
                 </li>
               ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Soup & Salad Section */}
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-20">
+  {/* Soup */}
+  <div className="col-span-1">
+    <h2
+      className={`${greatVibes.className} text-[#E3010F] text-4xl sm:text-5xl md:text-6xl mb-8 text-left`}
+    >
+      Soup
+    </h2>
+    <ul className="space-y-2">
+      {['Sweet Corn', 'Hot & Sour', 'Clear Noodle'].map((item, idx) => (
+        <li
+          key={idx}
+          style={{
+            color: '#FFF',
+            fontFamily: 'Satoshi',
+            fontSize: '18px',
+            fontWeight: 500,
+          }}
+        >
+          {item}
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  {/* Salad */}
+  <div className="col-span-1">
+    <h2
+      className={`${greatVibes.className} text-[#E3010F] text-4xl sm:text-5xl md:text-6xl mb-8 text-left`}
+    >
+      Salad
+    </h2>
+    <ul className="space-y-2">
+      {['Green Salad', 'Grilled Chicken Salad'].map((item, idx) => (
+        <li
+          key={idx}
+          style={{
+            color: '#FFF',
+            fontFamily: 'Satoshi',
+            fontSize: '18px',
+            fontWeight: 500,
+          }}
+        >
+          {item}
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
+
+        {/* Momos Section */}
+        <h2
+          className={`${greatVibes.className} text-[#E3010F] text-4xl sm:text-5xl md:text-6xl mb-12 text-left`}
+        >
+          Momos
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+          {/* Classic Momos */}
+          <div>
+            <h3 className="mb-4 text-[#E3010F] font-satoshi text-[26px] font-bold">
+              Classic Momos
+            </h3>
+            <ul className="space-y-2">
+              {['Steamed', 'Fried'].map((item, idx) => (
+                <li key={idx} className="text-white font-satoshi text-[18px] font-medium">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Signature Momos */}
+          <div>
+            <h3 className="mb-4 text-[#E3010F] font-satoshi text-[26px] font-bold">
+              Signature Momos
+            </h3>
+            <ul className="space-y-2">
+              {['Creamy Chicken', 'Afghani', 'Green Pepper', 'Kanthari', 'Jamaican'].map(
+                (item, idx) => (
+                  <li key={idx} className="text-white font-satoshi text-[18px] font-medium">
+                    {item}
+                  </li>
+                )
+              )}
             </ul>
           </div>
         </div>
