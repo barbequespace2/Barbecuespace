@@ -26,7 +26,7 @@ const satoshi = localFont({
 // ✅ --- Enhanced SEO Metadata ---
 export const metadata: Metadata = {
   // Sets the base URL for resolving images, etc.
-  metadataBase: new URL('https://barbecuespace.vercel.app'),
+  metadataBase: new URL('https://www.barbecuespace.in'),
 
   title: {
     default: 'Barbecue Space Thiruvananthapuram',
@@ -34,13 +34,13 @@ export const metadata: Metadata = {
   },
   description: 'Discover the authentic taste of Arabic grills, smoky barbecues, and flavorful delights at Barbecue Space. A premium dining experience in Thiruvananthapuram.',
   
-  keywords: ['barbecue', 'arabic grill', 'restaurant', 'Thiruvananthapuram', 'kuzhimandi', 'al-faham', 'dining', 'food in trivandrum'],
+  keywords: ['barbecue', 'arabic grill', 'restaurant', 'Thiruvananthapuram', 'kuzhimandi', 'al-faham', 'dining', 'food in trivandrum','best manthi in tvm','best barbecues in trivandrum','barbecue space'],
 
   // --- Open Graph (for Facebook, LinkedIn, etc.) ---
   openGraph: {
     title: 'Barbecue Space | Authentic Arabic Grills & Smoky Barbecues',
     description: 'A premium dining experience in Thiruvananthapuram, serving the best in smoky delights.',
-    url: 'https://barbecuespace.vercel.app',
+    url: 'https://www.barbecuespace.in',
     siteName: 'Barbecue Space',
     images: [
       {
