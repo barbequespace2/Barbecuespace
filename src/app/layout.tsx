@@ -79,6 +79,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${greatVibes.variable} ${imperialScript.variable} ${satoshi.variable}`}>
       {/* ❌ The <head> tag is no longer needed here. Next.js handles it with the metadata object. */}
+      <head>
+        <meta name="google-site-verification" content="Weub2Zua8vMxhG7KNJQ1Y2CM3vvqA6VbFknRaRp4mlA" />
+      </head>
       <body className="bg-[#181818]">
         <AOSProvider>
           <div className="relative">
