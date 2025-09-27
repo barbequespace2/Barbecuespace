@@ -9,15 +9,17 @@ const imperialScript = Imperial_Script({ subsets: ['latin'], weight: '400' });
 
 export default function HomePage() {
   return (
-    <div>
+    // FIX 1: Use h-full and overflow-hidden to properly constrain the main div
+    <div className="relative h-full overflow-hidden"> 
       {/* Home Section */}
       <section
-        className="flex min-h-screen items-center text-white flex-col md:flex-row md:items-center md:justify-center px-6 md:px-16"
-        style={{ paddingRight: '170px', paddingLeft: '0px' }}
+        // The min-h-screen will ensure the section takes up at least the viewport height
+        className="relative flex min-h-screen items-center text-white flex-col md:flex-row md:items-center justify-center px-6 md:px-16"
       >
-        {/* Left Side: Image (Hidden on Mobile) */}
+        {/* Left Side: Image (FIXED LEFT ON DESKTOP) */}
         <div
-          className="hidden md:flex flex-shrink-0"
+          // MODIFIED: Removed md:top-0 as min-h-screen on parent should suffice, and h-full is enough.
+          className="hidden md:block md:absolute md:left-0 md:h-full md:w-[700px] flex-shrink-0"
           data-aos="fade-right"
           data-aos-duration="700"
         >
@@ -26,60 +28,61 @@ export default function HomePage() {
             alt="Side Mandhi"
             width={700}
             height={700}
-            className="w-full h-auto object-cover"
+            // Ensure the image fills its container
+            className="w-full h-full object-fit" 
           />
         </div>
 
         {/* Right Side: Text Content */}
-{/* Right Side: Text Content */}
-{/* Right Side: Text Content */}
-<div
-  className="mt-10 md:mt-0 md:ml-0 md:pl-12 text-center md:text-left flex flex-col items-center md:items-start max-w-[900px]" // increased from 700px
-  data-aos="fade-left"
-  data-aos-duration="700"
-  style={{ fontFamily: 'var(--font-satoshi)' }}
->
-<h1 
-  className="relative z-30 text-white text-[36px] md:text-[50px] font-bold leading-none top-20 md:top-32 w-full"
->
-  Where Flavors Come <span className="italic">Alive</span> in
-</h1>
+        <div
+          // The margin here is the critical desktop offset
+          className="mt-10 md:mt-0 md:ml-[700px] md:pl-12 text-center md:text-left flex flex-col items-center md:items-start max-w-full md:max-w-[900px] w-full" 
+          data-aos="fade-left"
+          data-aos-duration="700"
+          style={{ fontFamily: 'var(--font-satoshi)' }}
+        >
+          <h1
+            // FIX 2: Reduced top offset slightly to avoid it pushing content down (if the screen is short)
+            className="relative z-30 text-white text-[36px] md:text-[50px] font-bold leading-none top-10 md:top-24 w-full"
+          >
+            Where Flavors Come <span className="italic">Alive</span> in
+          </h1>
 
 
 
 
 
-  <div
-    className="flex justify-center md:justify-start items-end mt-4"
-    data-aos="zoom-in"
-    data-aos-delay="150"
-    data-aos-duration="700"
-  >
-    <h2
-      className={`${imperialScript.className} text-[#E3010F] text-[120px] md:text-[248.303px] font-normal leading-none -mb-6 md:-mb-10`}
-    >
-      T
-    </h2>
+          <div
+            className="flex justify-center md:justify-start items-end mt-4"
+            data-aos="zoom-in"
+            data-aos-delay="150"
+            data-aos-duration="700"
+          >
+            <h2
+              className={`${imperialScript.className} text-[#E3010F] text-[120px] md:text-[248.303px] font-normal leading-none -mb-6 md:-mb-10`}
+            >
+              T
+            </h2>
 
             <h2 className="text-[#E3010F] font-greatVibes text-[72px] md:text-[112.047px] font-normal leading-none"
               style={{ fontFamily: "Great Vibes, cursive" }}>
               rivandrum
             </h2>
-  </div>
+          </div>
 
-<div
-  className="mt-6 md:mt-8 max-w-[594px] text-center font-normal text-[18px] leading-normal mx-auto"
-  data-aos="fade-up"
-  data-aos-delay="300"
-  data-aos-duration="700"
-  style={{ fontFamily: 'var(--font-satoshi)' }}
->
-  For those with pure food indulgence in mind, come next door and sate your
-  desires with our ever changing internationally and seasonally inspired small
-  plates. We love food, lots of different food, just like you.
-</div>
+          <div
+            className="mt-6 md:mt-8 max-w-[594px] text-center font-normal text-[18px] leading-normal mx-auto"
+            data-aos="fade-up"
+            data-aos-delay="300"
+            data-aos-duration="700"
+            style={{ fontFamily: 'var(--font-satoshi)' }}
+          >
+            For those with pure food indulgence in mind, come next door and sate your
+            desires with our ever changing internationally and seasonally inspired small
+            plates. We love food, lots of different food, just like you.
+          </div>
 
-</div>
+        </div>
 
 
       </section>
@@ -95,15 +98,15 @@ export default function HomePage() {
           <h2 className="text-white font-satoshi text-4xl md:text-5xl font-bold">
             About
           </h2>
-<h3
-  className="relative text-[#E3010F] font-greatVibes text-6xl md:text-8xl font-normal leading-[55.764%]"
-  data-aos="fade-right"
-  data-aos-delay="150"
-  data-aos-duration="700"
-  style={{ fontFamily: "Great Vibes, cursive", top: "10px" }} // moves it down by 20px
->
-  Barbecue Space
-</h3>
+          <h3
+            className="relative text-[#E3010F] font-greatVibes text-6xl md:text-8xl font-normal leading-[55.764%]"
+            data-aos="fade-right"
+            data-aos-delay="150"
+            data-aos-duration="700"
+            style={{ fontFamily: "Great Vibes, cursive", top: "10px" }}
+          >
+            Barbecue Space
+          </h3>
 
           <p
             className="mt-6 md:mt-8 font-satoshi text-[18px] md:text-[20px] font-normal leading-normal"
