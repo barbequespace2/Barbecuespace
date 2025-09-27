@@ -1,5 +1,6 @@
 // src/app/page.tsx
 import Image from 'next/image';
+import Link from 'next/link';
 import ImageCarousel from '@/components/ImageCarousel';
 import SingleImageSection from '@/components/SingleImageSection';
 import { Great_Vibes, Imperial_Script } from 'next/font/google';
@@ -187,14 +188,16 @@ export default function HomePage() {
             and smoky barbecues to flavorful vegetarian delights, all prepared with our
             signature touch.
           </p>
-          <button
-            className="mt-8 flex items-center justify-center gap-2.5 rounded-[500px] bg-[#E3010F] px-[35px] py-[14px] font-bold text-white"
-            data-aos="flip-up"
-            data-aos-delay="650"
-            data-aos-duration="700"
-          >
-            View The Full Menu
-          </button>
+          <Link href="/menu">
+            <button
+              className="mt-8 flex items-center justify-center gap-2.5 rounded-[500px] bg-[#E3010F] px-[35px] py-[14px] font-bold text-white"
+              data-aos="flip-up"
+              data-aos-delay="650"
+              data-aos-duration="700"
+            >
+              View The Full Menu
+            </button>
+          </Link>
         </div>
       </section>
 
