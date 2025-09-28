@@ -23,28 +23,45 @@ const satoshi = localFont({
   variable: '--font-satoshi',
 });
 
-// ✅ --- Enhanced SEO Metadata ---
+// ✅ --- Enhanced SEO Metadata with Favicon ---
 export const metadata: Metadata = {
-  // Sets the base URL for resolving images, etc.
   metadataBase: new URL('https://www.barbecuespace.in'),
 
   title: {
     default: 'Barbecue Space Thiruvananthapuram',
-    template: `%s | Barbecue Space`, // Used for child pages, e.g., "Menu | Barbecue Space"
+    template: `%s | Barbecue Space`,
   },
-  description: 'Discover the authentic taste of Arabic grills, smoky barbecues, and flavorful delights at Barbecue Space. A premium dining experience in Thiruvananthapuram.',
+  description:
+    'Discover the authentic taste of Arabic grills, smoky barbecues, and flavorful delights at Barbecue Space. A premium dining experience in Thiruvananthapuram.',
 
-  keywords: ['Barbeque Space, Restaurants near you, all you can eat, bbq, bbq nation, veg buffet barbecue', 'arabic grill', 'restaurant', 'Thiruvananthapuram', 'kuzhimandi', 'al-faham', 'dining', 'food in trivandrum','best manthi in tvm','best barbecues in trivandrum','barbecue space'],
+  keywords: [
+    'Barbeque Space',
+    'Restaurants near you',
+    'all you can eat',
+    'bbq',
+    'bbq nation',
+    'veg buffet barbecue',
+    'arabic grill',
+    'restaurant',
+    'Thiruvananthapuram',
+    'kuzhimandi',
+    'al-faham',
+    'dining',
+    'food in trivandrum',
+    'best manthi in tvm',
+    'best barbecues in trivandrum',
+    'barbecue space',
+  ],
 
-  // --- Open Graph (for Facebook, LinkedIn, etc.) ---
   openGraph: {
     title: 'Barbecue Space | Authentic Arabic Grills & Smoky Barbecues',
-    description: 'A premium dining experience in Thiruvananthapuram, serving the best in smoky delights.',
+    description:
+      'A premium dining experience in Thiruvananthapuram, serving the best in smoky delights.',
     url: 'https://www.barbecuespace.in',
     siteName: 'Barbecue Space',
     images: [
       {
-        url: '/about-image.svg', // IMPORTANT: Create a 1200x630px image and place it in the /public folder
+        url: '/about-image.svg',
         width: 1200,
         height: 630,
         alt: 'A platter of delicious barbecue from Barbecue Space',
@@ -54,15 +71,14 @@ export const metadata: Metadata = {
     type: 'website',
   },
 
-  // --- Twitter Card ---
   twitter: {
     card: 'summary_large_image',
     title: 'Barbecue Space | Authentic Arabic Grills & Smoky Barbecues',
-    description: 'A premium dining experience in Thiruvananthapuram, serving the best in smoky delights.',
-    images: ['/about-image.svg'], // IMPORTANT: The same OG image will be used here
+    description:
+      'A premium dining experience in Thiruvananthapuram, serving the best in smoky delights.',
+    images: ['/about-image.svg'],
   },
 
-  // --- Search Engine Instructions ---
   robots: {
     index: true,
     follow: true,
@@ -73,18 +89,25 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+
+  // ✅ Favicons
+  icons: {
+    icon: [
+      { url: '/favicon.ico', type: 'image/x-icon' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+    ],
+    apple: '/apple-touch-icon.png',
+    shortcut: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${greatVibes.variable} ${imperialScript.variable} ${satoshi.variable}`}>
-      {/* ❌ The <head> tag is no longer needed here. Next.js handles it with the metadata object. */}
-      <head>
-        <link rel="canonical" href="https://www.barbecusepace.in/" />
-        <meta name="google-site-verification" content="Weub2Zua8vMxhG7KNJQ1Y2CM3vvqA6VbFknRaRp4mlA" />
-          <meta name="description" content="Barbecue Space offers authentic, mouth-watering barbecue dishes with the perfect blend of spices and flavors. Visit us for an unforgettable dining experience." />
-          <meta name="keywords" content="barbecue, grill, restaurant, food, bbq, Barbecue Space" />
-      </head>
+    <html
+      lang="en"
+      className={`${greatVibes.variable} ${imperialScript.variable} ${satoshi.variable}`}
+    >
       <body className="bg-[#181818]">
         <AOSProvider>
           <div className="relative">
