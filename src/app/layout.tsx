@@ -33,8 +33,8 @@ export const metadata: Metadata = {
     template: `%s | Barbecue Space`, // Used for child pages, e.g., "Menu | Barbecue Space"
   },
   description: 'Discover the authentic taste of Arabic grills, smoky barbecues, and flavorful delights at Barbecue Space. A premium dining experience in Thiruvananthapuram.',
-  
-  keywords: ['barbecue', 'arabic grill', 'restaurant', 'Thiruvananthapuram', 'kuzhimandi', 'al-faham', 'dining', 'food in trivandrum','best manthi in tvm','best barbecues in trivandrum','barbecue space'],
+
+  keywords: ['Barbeque Space, Restaurants near you, all you can eat, bbq, bbq nation, veg buffet barbecue', 'arabic grill', 'restaurant', 'Thiruvananthapuram', 'kuzhimandi', 'al-faham', 'dining', 'food in trivandrum','best manthi in tvm','best barbecues in trivandrum','barbecue space'],
 
   // --- Open Graph (for Facebook, LinkedIn, etc.) ---
   openGraph: {
@@ -80,7 +80,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${greatVibes.variable} ${imperialScript.variable} ${satoshi.variable}`}>
       {/* ❌ The <head> tag is no longer needed here. Next.js handles it with the metadata object. */}
       <head>
+        <link rel="canonical" href="https://www.barbecusepace.in/" />
         <meta name="google-site-verification" content="Weub2Zua8vMxhG7KNJQ1Y2CM3vvqA6VbFknRaRp4mlA" />
+          <meta name="description" content="Barbecue Space offers authentic, mouth-watering barbecue dishes with the perfect blend of spices and flavors. Visit us for an unforgettable dining experience." />
+          <meta name="keywords" content="barbecue, grill, restaurant, food, bbq, Barbecue Space" />
       </head>
       <body className="bg-[#181818]">
         <AOSProvider>
