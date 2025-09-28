@@ -23,7 +23,7 @@ const satoshi = localFont({
   variable: '--font-satoshi',
 });
 
-// ✅ --- Enhanced SEO Metadata with Favicon ---
+// ✅ SEO Metadata with Favicon, Canonical & Extras
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.barbecuespace.in'),
 
@@ -100,6 +100,12 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
     shortcut: '/favicon.ico',
   },
+
+  // ✅ Canonical URL
+  alternates: {
+    canonical: 'https://www.barbecuespace.in',
+  },
+
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
