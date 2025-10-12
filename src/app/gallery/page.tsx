@@ -10,11 +10,11 @@ const greatVibes = Great_Vibes({ subsets: ['latin'], weight: '400' });
 
 // --- MOCK DATA FOR GALLERY ---
 const galleryImages = [
-  { src: '/about-image.svg', alt: 'Gallery Image 1' },
-  { src: '/about-image.svg', alt: 'Gallery Image 2' },
-  { src: '/about-image.svg', alt: 'Gallery Image 3' },
-  { src: '/about-image.svg', alt: 'Gallery Image 4' },
-  { src: '/about-image.svg', alt: 'Gallery Image 5' },
+  { src: '/grill.jpeg'},
+  { src: '/mandhi.jpeg'},
+  { src: '/mutta.jpeg'},
+  { src: '/murukku.jpeg'},
+  { src: '/combo.jpeg'},
 ];
 
 // --- SINGLE IMAGE COMPONENT ---
@@ -92,7 +92,7 @@ export default function GalleryPage() {
             key={idx}
             className="w-full sm:w-[48%] md:w-[375.933px] flex justify-center mb-6 sm:mb-0"
           >
-            <GalleryCard src={img.src} alt={img.alt} />
+            <GalleryCard src={img.src} alt={''}/>
           </div>
         ))}
       </div>
