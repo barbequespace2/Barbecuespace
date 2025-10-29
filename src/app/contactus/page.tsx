@@ -9,12 +9,32 @@ import Image from 'next/image';
 export default function ContactUsPage() {
   useEffect(() => {
     AOS.init({
-      duration: 900, // animation duration
-      once: false,   // animate every time you scroll
+      duration: 900,
+      once: false,
       easing: 'ease-in-out',
-      offset: 100,   // trigger slightly before element is in viewport
+      offset: 100,
     });
   }, []);
+
+  // WhatsApp number (replace with your number, include country code, e.g., +91)
+  const whatsappNumber = "919876543210";
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const name = form.elements.fullName.value;
+    const phone = form.elements.phone.value;
+    const email = form.elements.email.value;
+    const message = form.elements.message.value;
+
+    // Build WhatsApp message
+    const text = `Hello! I want to contact you.%0A%0AName: ${name}%0APhone: ${phone}%0AEmail: ${email}%0AMessage: ${message}`;
+
+    // Open WhatsApp in new tab
+    const url = `https://wa.me/${whatsappNumber}?text=${text}`;
+    window.open(url, "_blank");
+  };
 
   return (
     <div className="bg-[#181818] text-white min-h-screen">
@@ -56,39 +76,51 @@ export default function ContactUsPage() {
 
         {/* Right social icons */}
         <div className="flex flex-col items-center justify-center gap-4 ml-auto" data-aos="fade-left">
-          <a href="#" aria-label="Instagram">
+          <a
+            href="https://www.instagram.com/bbqspacetvm?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
             <div className="w-8 h-8 flex items-center justify-center rounded-full border border-white">
               <Image src="/instagram-red.svg" alt="Instagram" width={16} height={16} />
             </div>
           </a>
-
         </div>
       </div>
 
       {/* Main Section 2 - Contact Form */}
       <div className="px-4 sm:px-10 py-12 sm:py-16 max-w-6xl mx-auto" data-aos="fade-up">
-        <form className="flex flex-col gap-6">
+        <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             <input
               type="text"
+              name="fullName"
               placeholder="Name"
               className="bg-transparent border-b border-gray-500 focus:outline-none text-sm sm:text-base"
+              required
             />
             <input
               type="text"
+              name="phone"
               placeholder="Phone Number"
               className="bg-transparent border-b border-gray-500 focus:outline-none text-sm sm:text-base"
+              required
             />
             <input
               type="email"
+              name="email"
               placeholder="Email"
               className="bg-transparent border-b border-gray-500 focus:outline-none text-sm sm:text-base"
+              required
             />
           </div>
           <textarea
+            name="message"
             placeholder="Message"
             rows={4}
             className="w-full bg-transparent border-b border-gray-500 focus:outline-none text-sm sm:text-base"
+            required
           />
           <button
             type="submit"
