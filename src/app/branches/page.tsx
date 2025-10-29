@@ -14,19 +14,19 @@ const branchesData = [
     name: 'Kumarapuram',
     address: ['Poonthi Road', 'Near Kims Hospital', 'Trivandrum'],
     phone: '+91 95390 94555',
-    imageSrc: '/branch-1.png',
+    imageSrc: '/bbq-space-kumarapuram.webp',
   },
   {
     name: 'Kazhakuttam',
     address: ['NH 66 Bypass', 'Near Technopark', 'Trivandrum'],
     phone: '+91 98765 43210',
-    imageSrc: '/branch-1.png',
+    imageSrc: '/bbq-space-kazhakootam.webp',
   },
   {
     name: 'Pattom',
     address: ["Pattom Palace Rd", "Opp. St. Mary's School", 'Trivandrum'],
     phone: '+91 91234 56789',
-    imageSrc: '/branch-1.png',
+    imageSrc: '/bbq-space-pattom.webp',
   },
   {
     name: 'Kowdiar',
@@ -38,7 +38,16 @@ const branchesData = [
     name: 'Vazhuthacaud',
     address: ['Forest Office Lane', 'Near Kalabhavan Theatre', 'Trivandrum'],
     phone: '+91 96666 77777',
-    imageSrc: '/branch-1.png',
+    imageSrc: '/bbq-space-vzh.webp',
+  },
+  {
+    name: 'Tiffin Space - Vazhuthacaud',
+    address: [
+      'Junction, near Vijaya Press, DPI',
+      'Vazhuthacaud, Thiruvananthapuram, Kerala 695014',
+    ],
+    phone: '+91 96335 35559',
+    imageSrc: '/tiffin-space.webp',
   },
 ];
 
@@ -58,7 +67,7 @@ function SingleImageSection({
     <div
       className="w-full flex justify-center py-16"
       data-aos="fade-up"
-      data-aos-delay="200"
+      data-aos-delay={200}
     >
       <div
         className="relative"
@@ -88,36 +97,31 @@ function BranchCard({ name, address, phone, imageSrc }: BranchCardProps) {
     <div
       className="flex flex-col items-center flex-shrink-0 bg-black overflow-hidden"
       style={{
-        width: '302.603px',
-        padding: '14.038px 14.819px 32.608px 14.817px',
-        borderRadius: '7.799px',
+        width: '302px',
+        minHeight: '420px',
+        padding: '14px 15px 32px 15px',
+        borderRadius: '8px',
         border: '0.78px solid #E3010F',
       }}
       data-aos="zoom-in"
-      data-aos-delay="150"
+      data-aos-delay={150}
     >
-      {/* Image Div (Top) */}
-      <div className="w-full mb-4">
+      {/* Image Container */}
+      <div className="w-full h-[200px] mb-4 relative overflow-hidden rounded-md">
         <Image
           src={imageSrc}
           alt={`${name} branch`}
-          width={273}
-          height={200}
-          className="object-cover rounded-md"
+          fill
+          style={{ objectFit: 'cover' }}
         />
       </div>
-      {/* Content Div (Bottom) */}
+
+      {/* Content */}
       <div className="flex flex-col items-start w-full text-left">
-        <h3
-          className="font-satoshi font-medium text-[#E3010F]"
-          style={{ fontSize: '18px' }}
-        >
+        <h3 className="font-satoshi font-medium text-[#E3010F] text-[18px]">
           {name}
         </h3>
-        <p
-          className="mt-2 font-satoshi font-normal text-white"
-          style={{ fontSize: '13px' }}
-        >
+        <p className="mt-2 font-satoshi font-normal text-white text-[13px] h-[60px] overflow-hidden">
           {address.map((line, index) => (
             <span key={index}>
               {line}
@@ -125,10 +129,7 @@ function BranchCard({ name, address, phone, imageSrc }: BranchCardProps) {
             </span>
           ))}
         </p>
-        <p
-          className="mt-4 font-satoshi font-medium text-[#E3010F]"
-          style={{ fontSize: '14px' }}
-        >
+        <p className="mt-4 font-satoshi font-medium text-[#E3010F] text-[14px]">
           Contact No : {phone}
         </p>
       </div>
@@ -149,19 +150,16 @@ export default function BranchesPage() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen text-white bg-[#181818]">
-      {/* Hero Section with Background Image */}
+      {/* Hero Section */}
       <div
         className="relative w-full h-[50vh] flex flex-col items-center justify-center bg-cover bg-center"
         style={{
           backgroundImage: `url('/branch-image-bg.png')`,
         }}
         data-aos="fade-zoom-in"
-        data-aos-delay="100"
+        data-aos-delay={100}
       >
-        {/* Gray overlay */}
         <div className="absolute inset-0 bg-gray-500 opacity-50 z-[1]"></div>
-
-        {/* Gradient overlay */}
         <div
           className="absolute inset-0 z-[2]"
           style={{
@@ -170,56 +168,45 @@ export default function BranchesPage() {
           }}
         ></div>
 
-        {/* Hero Content */}
         <div className="relative z-[3] text-center">
-<h1
-  className={`${greatVibes.className} text-[#E3010F] font-normal text-4xl sm:text-5xl md:text-7xl lg:text-[100px] leading-[55%] pt-40 text-center`}
->
-  Branches
-</h1>
-
-
+          <h1
+            className={`${greatVibes.className} text-[#E3010F] font-normal text-4xl sm:text-5xl md:text-7xl lg:text-[100px] leading-[55%] pt-40`}
+          >
+            Branches
+          </h1>
           <p
-            className="mt-3 font-satoshi text-white"
-            style={{
-              fontSize: '22px',
-              fontWeight: 400,
-            }}
+            className="mt-3 font-satoshi text-white text-[22px]"
             data-aos="fade-up"
-            data-aos-delay="250"
+            data-aos-delay={250}
           >
             Find your nearest barbequespace
           </p>
         </div>
       </div>
 
-      {/* Branches Grid Section */}
+      {/* Branches Grid */}
       <div className="container mx-auto px-4 py-16">
         <div
           className="flex flex-wrap justify-center gap-8 mb-8"
           data-aos="fade-up"
-          data-aos-delay="200"
+          data-aos-delay={200}
         >
-          {branchesData.slice(0, 3).map((branch, idx) => (
-            <div key={branch.name} data-aos="zoom-in" data-aos-delay={200 + idx * 100}>
-              <BranchCard {...branch} />
-            </div>
+          {branchesData.slice(0, 4).map((branch, idx) => (
+            <BranchCard key={branch.name} {...branch} />
           ))}
         </div>
         <div
           className="flex flex-wrap justify-center gap-8"
           data-aos="fade-up"
-          data-aos-delay="300"
+          data-aos-delay={300}
         >
-          {branchesData.slice(3, 5).map((branch, idx) => (
-            <div key={branch.name} data-aos="zoom-in" data-aos-delay={300 + idx * 100}>
-              <BranchCard {...branch} />
-            </div>
+          {branchesData.slice(4).map((branch, idx) => (
+            <BranchCard key={branch.name} {...branch} />
           ))}
         </div>
       </div>
 
-      {/* Single Image Section before Footer */}
+      {/* Single Image Section */}
       <SingleImageSection
         imageSrc="/about-image.svg"
         altText="Barbecue Space restaurant interior"
