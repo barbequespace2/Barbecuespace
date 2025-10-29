@@ -1,12 +1,14 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import SingleImageSection from '../../components/SingleImageSection';
 import Image from 'next/image';
 
 export default function ContactUsPage() {
+  const [showToast, setShowToast] = useState(false);
+
   useEffect(() => {
     AOS.init({
       duration: 900,
@@ -16,10 +18,9 @@ export default function ContactUsPage() {
     });
   }, []);
 
-  // WhatsApp number (replace with your number, include country code, e.g., +91)
-  const whatsappNumber = "919876543210";
+  const whatsappNumber = "917012256258";
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: { preventDefault: () => void; target: any; }) => {
     e.preventDefault();
 
     const form = e.target;
@@ -28,16 +29,27 @@ export default function ContactUsPage() {
     const email = form.elements.email.value;
     const message = form.elements.message.value;
 
-    // Build WhatsApp message
     const text = `Hello! I want to contact you.%0A%0AName: ${name}%0APhone: ${phone}%0AEmail: ${email}%0AMessage: ${message}`;
-
-    // Open WhatsApp in new tab
     const url = `https://wa.me/${whatsappNumber}?text=${text}`;
+
+    // Open WhatsApp
     window.open(url, "_blank");
+
+    // Show toast notification
+    setShowToast(true);
+    setTimeout(() => setShowToast(false), 3000); // hide after 3 seconds
+    form.reset();
   };
 
   return (
-    <div className="bg-[#181818] text-white min-h-screen">
+    <div className="bg-[#181818] text-white min-h-screen relative">
+      
+      {/* Toast Notification */}
+      {showToast && (
+        <div className="fixed bottom-5 right-5 bg-green-600 text-white px-4 py-2 rounded shadow-lg z-50 animate-fade-in-out">
+          Redirecting to WhatsApp...
+        </div>
+      )}
 
       {/* Hero Section */}
       <div
@@ -168,6 +180,20 @@ export default function ContactUsPage() {
           height={100}
         />
       </div>
+
+      {/* Tailwind Animation */}
+      <style jsx>{`
+        @keyframes fade-in-out {
+          0% { opacity: 0; transform: translateY(10px); }
+          10% { opacity: 1; transform: translateY(0); }
+          90% { opacity: 1; transform: translateY(0); }
+          100% { opacity: 0; transform: translateY(-10px); }
+        }
+        .animate-fade-in-out {
+          animation: fade-in-out 3s ease forwards;
+        }
+      `}</style>
+
     </div>
   );
 }
