@@ -83,7 +83,7 @@ export default function ContactUsPage() {
             Get in touch with us
           </h2>
           <p className="text-base sm:text-lg md:text-2xl">
-            We're here to assist you.
+            We&apos;re here to assist you.
           </p>
         </div>
 
