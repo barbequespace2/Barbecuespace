@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const socialMediaIcons = [
   { href: '#', src: '/facebook.svg', alt: 'Facebook' },
-  { href: '#', src: '/instagram.svg', alt: 'Instagram' },
+  { href: 'https://www.instagram.com/bbqspacetvm?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', src: '/instagram.svg', alt: 'Instagram' },
   { href: '#', src: '/twitter.svg', alt: 'Twitter' },
 ];
 
@@ -78,9 +78,19 @@ export default function Footer() {
             <p className="font-satoshi text-black text-[12px] font-medium leading-[130%]">
               Copyright © 2025 . Powered by Barbeque Space
             </p>
-            <p className="font-satoshi text-black text-[12px] font-medium leading-[130%]">
-              Designed and developed by Orque
-            </p>
+<p className="font-satoshi text-black text-[12px] font-medium leading-[130%]">
+  Designed and developed by{" "}
+  <a 
+    href="https://www.orqueinnovations.com" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="text-black hover:underline"
+  >
+    Orque
+  </a>
+</p>
+
+
           </div>
         </div>
       </div>

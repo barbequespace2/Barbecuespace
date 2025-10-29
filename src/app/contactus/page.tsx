@@ -61,16 +61,7 @@ export default function ContactUsPage() {
               <Image src="/instagram-red.svg" alt="Instagram" width={16} height={16} />
             </div>
           </a>
-          <a href="#" aria-label="Facebook">
-            <div className="w-8 h-8 flex items-center justify-center rounded-full border border-white">
-              <Image src="/facebook-red.svg" alt="Facebook" width={16} height={16} />
-            </div>
-          </a>
-          <a href="#" aria-label="Twitter">
-            <div className="w-8 h-8 flex items-center justify-center rounded-full border border-white">
-              <Image src="/twitter-red.svg" alt="Twitter" width={16} height={16} />
-            </div>
-          </a>
+
         </div>
       </div>
 
