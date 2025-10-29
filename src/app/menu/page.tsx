@@ -328,29 +328,42 @@ export default function MenuPage() {
           </div>
         </div>
         
-        {/* Fish Grill Section */}
-        <h2 className={`${greatVibes.className} text-[#E3010F] text-4xl sm:text-5xl md:text-6xl mb-12 text-left`}>Fish Grill</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-20">
-          <div className="col-span-1">
-            <ul className="space-y-2">
-              {['Hamour','Sheri','Jumbo Prawns'].map((item, idx) => (
-                <li key={idx} style={{color:'#FFF', fontFamily:'Satoshi', fontSize:'18px', fontWeight:500}}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
+<div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-20">
+  {/* Fish Grill Section */}
+  <div>
+    <h2 className={`${greatVibes.className} text-[#E3010F] text-4xl sm:text-5xl md:text-6xl mb-6`}>
+      Fish Grill
+    </h2>
+    <ul className="space-y-2">
+      {['Hamour', 'Sheri', 'Jumbo Prawns'].map((item, idx) => (
+        <li
+          key={idx}
+          style={{ color: '#FFF', fontFamily: 'Satoshi', fontSize: '18px', fontWeight: 500 }}
+        >
+          {item}
+        </li>
+      ))}
+    </ul>
+  </div>
 
-        {/* Tawa Fish Section */}
-        <h2 className={`${greatVibes.className} text-[#E3010F] text-4xl sm:text-5xl md:text-6xl mb-12 text-left`}>Tawa Fish</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-20">
-          <div className="col-span-1">
-            <ul className="space-y-2">
-              {['Prawns','Avoli','Neymeen'].map((item, idx) => (
-                <li key={idx} style={{color:'#FFF', fontFamily:'Satoshi', fontSize:'18px', fontWeight:500}}>{item}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
+  {/* Tawa Fish Section */}
+  <div>
+    <h2 className={`${greatVibes.className} text-[#E3010F] text-4xl sm:text-5xl md:text-6xl mb-6`}>
+      Tawa Fish
+    </h2>
+    <ul className="space-y-2">
+      {['Prawns', 'Avoli', 'Neymeen'].map((item, idx) => (
+        <li
+          key={idx}
+          style={{ color: '#FFF', fontFamily: 'Satoshi', fontSize: '18px', fontWeight: 500 }}
+        >
+          {item}
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
+
 
         {/* North Indian Section */}
         <h2 className={`${greatVibes.className} text-[#E3010F] text-4xl sm:text-5xl md:text-6xl mb-12 text-left`}>North Indian</h2>
