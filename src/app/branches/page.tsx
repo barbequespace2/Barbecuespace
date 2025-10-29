@@ -51,7 +51,7 @@ const branchesData = [
   },
 ];
 
-// --- PLACEHOLDER COMPONENT ---
+// --- SINGLE IMAGE SECTION ---
 function SingleImageSection({
   imageSrc,
   altText,
@@ -84,7 +84,7 @@ function SingleImageSection({
   );
 }
 
-// --- BRANCH CARD COMPONENT ---
+// --- BRANCH CARD ---
 type BranchCardProps = {
   name: string;
   address: string[];
@@ -95,7 +95,7 @@ type BranchCardProps = {
 function BranchCard({ name, address, phone, imageSrc }: BranchCardProps) {
   return (
     <div
-      className="flex flex-col items-center flex-shrink-0 bg-black overflow-hidden"
+      className="flex flex-col items-center bg-black overflow-hidden"
       style={{
         width: '302px',
         minHeight: '420px',
@@ -106,7 +106,7 @@ function BranchCard({ name, address, phone, imageSrc }: BranchCardProps) {
       data-aos="zoom-in"
       data-aos-delay={150}
     >
-      {/* Image Container */}
+      {/* Image */}
       <div className="w-full h-[200px] mb-4 relative overflow-hidden rounded-md">
         <Image
           src={imageSrc}
@@ -122,8 +122,8 @@ function BranchCard({ name, address, phone, imageSrc }: BranchCardProps) {
           {name}
         </h3>
         <p className="mt-2 font-satoshi font-normal text-white text-[13px] h-[60px] overflow-hidden">
-          {address.map((line, index) => (
-            <span key={index}>
+          {address.map((line, i) => (
+            <span key={i}>
               {line}
               <br />
             </span>
@@ -153,9 +153,7 @@ export default function BranchesPage() {
       {/* Hero Section */}
       <div
         className="relative w-full h-[50vh] flex flex-col items-center justify-center bg-cover bg-center"
-        style={{
-          backgroundImage: `url('/branch-image-bg.png')`,
-        }}
+        style={{ backgroundImage: `url('/branch-image-bg.png')` }}
         data-aos="fade-zoom-in"
         data-aos-delay={100}
       >
@@ -191,7 +189,7 @@ export default function BranchesPage() {
           data-aos="fade-up"
           data-aos-delay={200}
         >
-          {branchesData.slice(0, 4).map((branch, idx) => (
+          {branchesData.slice(0, 4).map((branch) => (
             <BranchCard key={branch.name} {...branch} />
           ))}
         </div>
@@ -200,7 +198,7 @@ export default function BranchesPage() {
           data-aos="fade-up"
           data-aos-delay={300}
         >
-          {branchesData.slice(4).map((branch, idx) => (
+          {branchesData.slice(4).map((branch) => (
             <BranchCard key={branch.name} {...branch} />
           ))}
         </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, FormEvent } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import SingleImageSection from '../../components/SingleImageSection';
@@ -20,30 +20,31 @@ export default function ContactUsPage() {
 
   const whatsappNumber = "917012256258";
 
-  const handleSubmit = (e: { preventDefault: () => void; target: any; }) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const form = e.target;
-    const name = form.elements.fullName.value;
-    const phone = form.elements.phone.value;
-    const email = form.elements.email.value;
-    const message = form.elements.message.value;
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const name = formData.get('fullName')?.toString() || '';
+    const phone = formData.get('phone')?.toString() || '';
+    const email = formData.get('email')?.toString() || '';
+    const message = formData.get('message')?.toString() || '';
 
     const text = `Hello! I want to contact you.%0A%0AName: ${name}%0APhone: ${phone}%0AEmail: ${email}%0AMessage: ${message}`;
     const url = `https://wa.me/${whatsappNumber}?text=${text}`;
 
     // Open WhatsApp
-    window.open(url, "_blank");
+    window.open(url, '_blank');
 
     // Show toast notification
     setShowToast(true);
-    setTimeout(() => setShowToast(false), 3000); // hide after 3 seconds
+    setTimeout(() => setShowToast(false), 3000);
     form.reset();
   };
 
   return (
     <div className="bg-[#181818] text-white min-h-screen relative">
-      
+
       {/* Toast Notification */}
       {showToast && (
         <div className="fixed bottom-5 right-5 bg-green-600 text-white px-4 py-2 rounded shadow-lg z-50 animate-fade-in-out">
@@ -75,21 +76,21 @@ export default function ContactUsPage() {
       </div>
 
       {/* Main Section 1 */}
-      <div className="grid grid-cols-2 gap-4 sm:gap-10 px-4 sm:px-10 py-6 sm:py-8 max-w-6xl mx-auto h-[167px] items-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-10 px-4 sm:px-10 py-6 sm:py-8 max-w-6xl mx-auto items-center">
         {/* Left text */}
-        <div className="flex flex-col gap-2" style={{ width: '100%', maxWidth: '530px' }} data-aos="fade-right">
+        <div className="flex flex-col gap-2" style={{ maxWidth: '530px' }} data-aos="fade-right">
           <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold">
             Get in touch with us
           </h2>
           <p className="text-base sm:text-lg md:text-2xl">
-            We&apos;re here to assist you.
+            We're here to assist you.
           </p>
         </div>
 
         {/* Right social icons */}
         <div className="flex flex-col items-center justify-center gap-4 ml-auto" data-aos="fade-left">
           <a
-            href="https://www.instagram.com/bbqspacetvm?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            href="https://www.instagram.com/bbqspacetvm"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
@@ -152,16 +153,12 @@ export default function ContactUsPage() {
             We are always happy <br /> to assist you
           </p>
         </div>
-        <div className="flex-1 min-w-[180px]" data-aos="fade-up" data-aos-delay="150">
+        <div className="flex-1 min-w-[180px]" data-aos="fade-up" data-aos-delay={150}>
           <h4 className="text-sm sm:text-base font-bold">Email Address</h4>
           <div className="w-12 h-[2px] bg-white mt-1 mb-2"></div>
-          <p className="font-bold text-sm sm:text-base">help@info.com</p>
-          <p className="mt-2 text-xs sm:text-sm">
-            Assistance hours:
-            <br /> Monday - Friday 6 am to 8 pm EST
-          </p>
+          <p className="font-bold text-sm sm:text-base">barbequespace2@gmail.com</p>
         </div>
-        <div className="flex-1 min-w-[180px]" data-aos="fade-up" data-aos-delay="300">
+        <div className="flex-1 min-w-[180px]" data-aos="fade-up" data-aos-delay={300}>
           <h4 className="text-sm sm:text-base font-bold">Number</h4>
           <p className="font-bold text-sm sm:text-base">(808) 998-34256</p>
           <p className="mt-2 text-xs sm:text-sm">
@@ -172,7 +169,7 @@ export default function ContactUsPage() {
       </div>
 
       {/* Bottom Section */}
-      <div className="px-4 sm:px-10 max-w-6xl mx-auto flex justify-center pb-20" data-aos="fade-up" data-aos-delay="350">
+      <div className="px-4 sm:px-10 max-w-6xl mx-auto flex justify-center pb-20" data-aos="fade-up" data-aos-delay={350}>
         <SingleImageSection
           imageSrc="/about-image.svg"
           altText="Barbecue Space restaurant interior"
@@ -193,7 +190,6 @@ export default function ContactUsPage() {
           animation: fade-in-out 3s ease forwards;
         }
       `}</style>
-
     </div>
   );
 }
