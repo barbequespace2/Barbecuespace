@@ -160,7 +160,7 @@ export default function ContactUsPage() {
         </div>
         <div className="flex-1 min-w-[180px]" data-aos="fade-up" data-aos-delay={300}>
           <h4 className="text-sm sm:text-base font-bold">Number</h4>
-          <p className="font-bold text-sm sm:text-base">(808) 998-34256</p>
+          <p className="font-bold text-sm sm:text-base">+91 80893 67968</p>
           <p className="mt-2 text-xs sm:text-sm">
             Assistance hours:
             <br /> Monday - Friday 6 am to 8 pm EST

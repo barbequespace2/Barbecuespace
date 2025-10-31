@@ -54,7 +54,7 @@ export default function Footer() {
             Contact us
           </p>
           <p className="mt-1 font-satoshi text-black text-xl font-medium tracking-[-0.4px] leading-[120%]">
-            +91 98765 43210
+            +91 80893 67968
           </p>
           <p className="mt-4 font-satoshi text-black text-[10px] font-bold uppercase tracking-[0.4px] leading-[130%]">
             Email

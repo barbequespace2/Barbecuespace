@@ -1,14 +1,18 @@
 // src/app/page.tsx
 import Image from 'next/image';
 import Link from 'next/link';
+import Clarity from '@microsoft/clarity';
 import ImageCarousel from '@/components/ImageCarousel';
 import SingleImageSection from '@/components/SingleImageSection';
 import { Great_Vibes, Imperial_Script } from 'next/font/google';
 const greatVibes = Great_Vibes({ subsets: ['latin'], weight: '400' });
 const imperialScript = Imperial_Script({ subsets: ['latin'], weight: '400' });
+const projectId = "tysmqw7ed4"
 
+Clarity.init(projectId);
 export default function HomePage() {
   return (
+    
     // FIX 1: Use h-full and overflow-hidden to properly constrain the main div
     <div className="relative h-full overflow-hidden"> 
       {/* Home Section */}
