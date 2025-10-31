@@ -30,7 +30,7 @@ export default function Footer() {
               <span className="mr-1">/</span>
               <Link href="/branches" className="mr-1">Branches</Link>
               <span className="mr-1">/</span>
-              <Link href="/gallery">Gallery</Link>
+              {/* <Link href="/gallery">Gallery</Link> */}
             </span>
           </div>
           <div className="flex gap-2 mt-4">
@@ -105,7 +105,7 @@ export default function Footer() {
             <Link href="/" className="mr-1">Home</Link> / <Link href="/aboutus">About us</Link>
           </p>
           <p className="text-black text-base">
-            <Link href="/menu" className="mr-1">Menu</Link> / <Link href="/branches">Branches</Link> / <Link href="/gallery">Gallery</Link>
+            <Link href="/menu" className="mr-1">Menu</Link> / <Link href="/branches">Branches</Link>  {/* <Link href="/gallery">Gallery</Link> */}
           </p>
         </div>
 
