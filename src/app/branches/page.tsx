@@ -24,21 +24,21 @@ const branchesData = [
   },
   {
     name: 'Pattom',
-    address: ["Pattom Palace Rd", "Opp. St. Mary's School", 'Trivandrum'],
-    phone: '+91 81398 35551',
+    address: ["OPP ARCH BISHOP'S HOUSE", "Pattom Trivandrum"],
+    phone: '+91 81398 35551',
     imageSrc: '/bbq-space-pattom.webp',
   },
   {
     name: 'Palayam',
-    address: ['Vazhtacaud', 'Near Akashavani', 'Trivandrum'],
-    phone: '+91 94444 55555',
-    imageSrc: '/branch-1.png',
+    address: ['Anna’s arcade building', 'Opp Canara bank', 'Spencer Jn Palayam '],
+    phone: '+91 95390 65555',
+    imageSrc: '/palayam.avif',
   },
   {
     name: 'Vazhuthacaud',
-    address: ['Forest Office Lane', 'Near Kalabhavan Theatre', 'Trivandrum'],
+    address: ['Opp all India radio', 'DPI Vazhuthacaud', 'Trivandrum'],
     phone: '+91 95392 65555',
-    imageSrc: '/bbq-space-vzh.webp',
+    imageSrc: '/branch-1.png',
   },
   {
     name: 'Tiffin Space - Vazhuthacaud',
