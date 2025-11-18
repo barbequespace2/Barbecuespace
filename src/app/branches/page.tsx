@@ -19,25 +19,25 @@ const branchesData = [
   {
     name: 'Kazhakuttam',
     address: ['NH 66 Bypass', 'Near Technopark', 'Trivandrum'],
-    phone: '+91 98765 43210',
+    phone: '+91 95390 68888',
     imageSrc: '/bbq-space-kazhakootam.webp',
   },
   {
     name: 'Pattom',
     address: ["Pattom Palace Rd", "Opp. St. Mary's School", 'Trivandrum'],
-    phone: '+91 91234 56789',
+    phone: '+91 81398 35551',
     imageSrc: '/bbq-space-pattom.webp',
   },
   {
-    name: 'Kowdiar',
-    address: ['Kowdiar Main Road', 'Near Tennis Club', 'Trivandrum'],
+    name: 'Palayam',
+    address: ['Vazhtacaud', 'Near Akashavani', 'Trivandrum'],
     phone: '+91 94444 55555',
     imageSrc: '/branch-1.png',
   },
   {
     name: 'Vazhuthacaud',
     address: ['Forest Office Lane', 'Near Kalabhavan Theatre', 'Trivandrum'],
-    phone: '+91 96666 77777',
+    phone: '+91 95392 65555',
     imageSrc: '/bbq-space-vzh.webp',
   },
   {

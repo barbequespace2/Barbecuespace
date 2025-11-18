@@ -196,7 +196,7 @@ export default function MenuPage() {
           <div className="col-span-1">
             <h2 className={`${greatVibes.className} text-[#E3010F] text-4xl sm:text-5xl md:text-6xl mb-8 text-left`}>Burgers</h2>
             <ul className="space-y-2">
-              {['Jamaican Grilled', 'Normal', 'Spicy', 'Cheese', 'Double Cheese'].map((item, idx) => (
+              {['American Smash Burger', 'Simple Smash Burger', 'Jamaican Paneer Burger', 'Jamaican Smash'].map((item, idx) => (
                 <li key={idx} style={{color:'#FFF', fontFamily:'Satoshi', fontSize:'18px', fontWeight:500}}>
                   {item}
                 </li>
@@ -450,7 +450,7 @@ export default function MenuPage() {
         <div className="mb-20">
           <h2 className={`${greatVibes.className} text-[#E3010F] text-4xl sm:text-5xl md:text-6xl mb-8 text-left`}>Soda Sarbath</h2>
           <ul className="space-y-2">
-            {['Naruneendi', 'Ginger', 'Mint', 'Passion Fruit', 'Sweet Lime'].map((item, idx) => (
+            {['Naruneendi', 'Ginger', 'Mint', 'Passion Fruit', 'Sweet Beer'].map((item, idx) => (
               <li key={idx} style={{color:'#FFF', fontFamily:'Satoshi', fontSize:'18px', fontWeight:500}}>{item}</li>
             ))}
           </ul>
@@ -520,7 +520,7 @@ export default function MenuPage() {
           <div>
             <h2 className={`${greatVibes.className} text-[#E3010F] text-4xl sm:text-5xl md:text-6xl mb-8 text-left`}>Jar Ice Creams</h2>
             <ul className="space-y-2">
-              {['Eclair', 'Milk Candy', 'Tender Coconut', 'Pot Ice', 'Fruit Salad'].map((item, idx) => (
+              {['Eclair', 'Milk Candy', 'Tender Coconut', 'Paal Ice', 'Fruit Salad'].map((item, idx) => (
                 <li key={idx} style={{color:'#FFF', fontFamily:'Satoshi', fontSize:'18px', fontWeight:500}}>{item}</li>
               ))}
             </ul>
@@ -541,7 +541,7 @@ export default function MenuPage() {
           <div className="col-span-2">
             <h2 className={`${greatVibes.className} text-[#E3010F] text-4xl sm:text-5xl md:text-6xl mb-8 text-left`}>Exotic Ice Cream</h2>
             <ul className="space-y-2">
-              {['Mint Candy', 'Bubble Chocolate', 'English Toffee'].map((item, idx) => (
+              {['Milk Candy', 'Bubble Chocolate', 'English Toffee'].map((item, idx) => (
                 <li key={idx} style={{color:'#FFF', fontFamily:'Satoshi', fontSize:'18px', fontWeight:500}}>{item}</li>
               ))}
             </ul>
