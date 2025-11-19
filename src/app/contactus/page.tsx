@@ -18,7 +18,7 @@ export default function ContactUsPage() {
     });
   }, []);
 
-  const whatsappNumber = "917012256258";
+  const whatsappNumber = "918089367968";
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
