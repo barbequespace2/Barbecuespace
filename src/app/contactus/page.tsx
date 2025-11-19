@@ -156,7 +156,7 @@ export default function ContactUsPage() {
         <div className="flex-1 min-w-[180px]" data-aos="fade-up" data-aos-delay={150}>
           <h4 className="text-sm sm:text-base font-bold">Email Address</h4>
           <div className="w-12 h-[2px] bg-white mt-1 mb-2"></div>
-          <p className="font-bold text-sm sm:text-base">barbequespace2@gmail.com</p>
+          <p className="font-bold text-sm sm:text-base">gmbbqspacetvm@gmail.com</p>
         </div>
         <div className="flex-1 min-w-[180px]" data-aos="fade-up" data-aos-delay={300}>
           <h4 className="text-sm sm:text-base font-bold">Number</h4>

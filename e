@@ -26,4 +26,4 @@ core.logallrefupdates=true
 core.symlinks=false
 core.ignorecase=true
 user.name=barbequespace2
-user.email=barbequespace2@gmail.com
+user.email=gmbbqspacetvm@gmail.com

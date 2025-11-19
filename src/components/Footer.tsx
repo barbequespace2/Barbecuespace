@@ -60,7 +60,7 @@ export default function Footer() {
             Email
           </p>
           <p className="mt-1 font-satoshi text-black text-xl font-medium tracking-[-0.4px] leading-[120%]">
-            barbequespace2@gmail.com
+            gmbbqspacetvm@gmail.com
           </p>
         </div>
 

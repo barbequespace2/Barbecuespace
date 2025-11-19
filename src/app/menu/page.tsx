@@ -207,7 +207,7 @@ export default function MenuPage() {
           <div className="col-span-1">
             <h2 className={`${greatVibes.className} text-[#E3010F] text-4xl sm:text-5xl md:text-6xl mb-8 text-left`}>Fusion Pasta Bowl</h2>
             <ul className="space-y-2">
-              {['Jamaican Chicken', 'Afghani Chicken', 'Creamy Veg', 'Mexican Veg'].map((item, idx) => (
+              {['Jamaican Chicken', 'Afghani Chicken'].map((item, idx) => (
                 <li key={idx} style={{color:'#FFF', fontFamily:'Satoshi', fontSize:'18px', fontWeight:500}}>
                   {item}
                 </li>
@@ -423,7 +423,7 @@ export default function MenuPage() {
           <div>
             <h2 className={`${greatVibes.className} text-[#E3010F] text-4xl sm:text-5xl md:text-6xl mb-8 text-left`}>Breads</h2>
             <ul className="space-y-2">
-              {['Khubz', 'Chapathi', 'Malabar Parotta', 'Rumali Rotti', 'Plain Pathiri', 'Oretti', 'Tandoor Rotti', 'Butter Rotti', 'Naan', 'Butter Naan', 'Garlic Naan', 'Pathiri Set (3pc)', 'Steamed Bread Set (3pc)'].map((item, idx) => (
+              {['Khubz', 'Chapathi', 'Malabar Parotta', 'Rumali Rotti', 'Plain Pathiri', 'Tandoor Rotti', 'Butter Rotti', 'Naan', 'Butter Naan', 'Garlic Naan', 'Pathiri Set (3pc)'].map((item, idx) => (
                 <li key={idx} style={{color:'#FFF', fontFamily:'Satoshi', fontSize:'18px', fontWeight:500}}>{item}</li>
               ))}
             </ul>
@@ -539,7 +539,7 @@ export default function MenuPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-20">
           {/* Exotic Ice Cream */}
           <div className="col-span-2">
-            <h2 className={`${greatVibes.className} text-[#E3010F] text-4xl sm:text-5xl md:text-6xl mb-8 text-left`}>Exotic Ice Cream</h2>
+            <h2 className={`${greatVibes.className} text-[#E3010F] text-4xl sm:text-5xl md:text-6xl mb-8 text-left`}>Exotic Ice Cream Shake</h2>
             <ul className="space-y-2">
               {['Milk Candy', 'Bubble Chocolate', 'English Toffee'].map((item, idx) => (
                 <li key={idx} style={{color:'#FFF', fontFamily:'Satoshi', fontSize:'18px', fontWeight:500}}>{item}</li>

@@ -93,7 +93,7 @@ export default function AboutUsPage() {
               Our Story
             </h2>
             <p className="mt-4 text-white font-satoshi text-lg font-normal leading-[160%]">
-              Barbecue Space is the creation of three brothers, Muhammed Saler, Muhammed Harris, and Mohammed Safeer. Their shared love for food and a vision to create something truly special led them to open our first location. From the very beginning, they were determined to offer a unique dining experience and a menu that would stand out from the rest.
+              Barbecue Space is the creation of three brothers, Muhammed Fazil, Muhammed Harris, and Mohammed Safeer. Their shared love for food and a vision to create something truly special led them to open our first location. From the very beginning, they were determined to offer a unique dining experience and a menu that would stand out from the rest.
             </p>
             <p className="mt-4 text-white font-satoshi text-lg font-normal leading-[160%]">
               Driven by a passion for perfection, the founders personally curated every detail of the restaurant, from the unique blend of spices in our dishes to the comfortable and modern ambiance. Their dedication and hands-on approach have been the heart of our success, and their commitment to our guests is what makes Barbecue Space feel like home.

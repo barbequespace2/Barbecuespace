@@ -18,7 +18,7 @@ const branchesData = [
   },
   {
     name: 'Kazhakuttam',
-    address: ['NH 66 Bypass', 'Near Technopark', 'Trivandrum'],
+    address: ['NH 66 Bypass', 'Near UST Global', 'Trivandrum'],
     phone: '+91 95390 68888',
     imageSrc: '/bbq-space-kazhakootam.webp',
   },
